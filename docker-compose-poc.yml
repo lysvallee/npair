@@ -5,7 +5,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=postgresql://admin:3Dgen_gltf@db/npair_db
+      - NPAIR_DB_URL=postgresql://admin:3Dgen_gltf@db/npair_db
     volumes:
       - ./data/storage:/data/storage
       - ./data/api/pip_cache:/root/.cache/pip

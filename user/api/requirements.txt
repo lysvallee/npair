@@ -4,3 +4,4 @@ jinja2
 sqlmodel
 httpx
 python-multipart
+psycopg2-binary
