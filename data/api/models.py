@@ -61,3 +61,12 @@ class Usage(SQLModel, table=True):
     show: Optional["Show"] = Relationship()
     brand: Optional["Brand"] = Relationship()
     material: Optional["Material"] = Relationship()
+
+
+class ServiceMetrics(SQLModel, table=True):
+    id: int = Field(primary_key=True)
+    service_name: str
+    endpoint: str
+    response_time_ms: float
+    status_code: int
+    timestamp: datetime
