@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlmodel
+psycopg2
+requests
+Pillow
+cassandra-driver
+colorthief
+bs4

@@ -1,0 +1,1160 @@
+2024-08-15 13:05:48,373 - user_api - DEBUG - Logging is configured and directory exists.
+2024-08-15 13:05:53,330 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 13:05:53,332 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 13:05:53,395 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 13:05:53,396 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030c6bca0>
+2024-08-15 13:05:53,397 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 13:05:53,397 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:05:53,397 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 13:05:53,398 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:05:53,398 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 13:05:53,412 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:05:53 GMT'), (b'server', b'uvicorn'), (b'content-length', b'367'), (b'content-type', b'application/json')])
+2024-08-15 13:05:53,412 - httpx - INFO - HTTP Request: GET http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 13:05:53,412 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 13:05:53,413 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:05:53,413 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:05:53,413 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:05:53,413 - user_api - DEBUG - 3D image path: /data/storage/images/bicycle/000011_bicycle_vehicle_cycling.png
+2024-08-15 13:05:53,414 - httpcore.connection - DEBUG - connect_tcp.started host='model_api' port=8001 local_address=None timeout=3600 socket_options=None
+2024-08-15 13:05:53,415 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0303fd280>
+2024-08-15 13:05:53,415 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 13:05:53,415 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:05:53,415 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 13:05:53,415 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:05:53,416 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 13:06:03,402 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-08-15 13:06:03,402 - multipart.multipart - DEBUG - Calling on_field_name with data[0:19]
+2024-08-15 13:06:03,402 - multipart.multipart - DEBUG - Calling on_field_data with data[20:91]
+2024-08-15 13:06:03,402 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-08-15 13:06:03,402 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-08-15 13:06:03,406 - user_api - DEBUG - Selected image path: /data/storage/images/bicycle/000008_bicycle_small_vehicle.png
+2024-08-15 13:06:03,406 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 13:06:03,408 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 13:06:03,426 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 13:06:03,428 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff03036d9d0>
+2024-08-15 13:06:03,429 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 13:06:03,429 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:06:03,429 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 13:06:03,429 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:06:03,429 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 13:06:03,457 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:06:03 GMT'), (b'server', b'uvicorn'), (b'content-length', b'365'), (b'content-type', b'application/json')])
+2024-08-15 13:06:03,457 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 13:06:03,458 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 13:06:03,458 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:06:03,458 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:06:03,458 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:06:03,458 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:06:03,458 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:06:03,532 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 13:06:03,532 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 13:06:03,548 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 13:06:03,549 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030305370>
+2024-08-15 13:06:03,549 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 13:06:03,549 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:06:03,549 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 13:06:03,549 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:06:03,549 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 13:06:03,553 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:06:03 GMT'), (b'server', b'uvicorn'), (b'content-length', b'365'), (b'content-type', b'application/json')])
+2024-08-15 13:06:03,553 - httpx - INFO - HTTP Request: GET http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 13:06:03,553 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 13:06:03,553 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:06:03,554 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:06:03,554 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:06:03,554 - user_api - DEBUG - 3D image path: /data/storage/images/bicycle/000008_bicycle_small_vehicle.png
+2024-08-15 13:06:03,554 - httpcore.connection - DEBUG - connect_tcp.started host='model_api' port=8001 local_address=None timeout=3600 socket_options=None
+2024-08-15 13:06:03,556 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff03036d820>
+2024-08-15 13:06:03,557 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 13:06:03,557 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:06:03,557 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 13:06:03,557 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:06:03,557 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 13:06:13,812 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:05:53 GMT'), (b'server', b'uvicorn'), (b'content-length', b'143'), (b'content-type', b'application/json')])
+2024-08-15 13:06:13,813 - httpx - INFO - HTTP Request: POST http://model_api:8001/generate "HTTP/1.1 200 OK"
+2024-08-15 13:06:13,813 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 13:06:13,813 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:06:13,813 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:06:13,813 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:06:13,813 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:06:13,814 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:06:13,814 - user_api - DEBUG - model data: {'object_3d': '/data/storage/objects/000011_bicycle_vehicle_cycling.glb', 'object_2d': '/data/storage/renders/000011_bicycle_vehicle_cycling.gif'}
+2024-08-15 13:06:13,814 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 13:06:13,815 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030300be0>
+2024-08-15 13:06:13,815 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 13:06:13,816 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:06:13,816 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 13:06:13,816 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:06:13,816 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 13:06:13,823 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:06:13 GMT'), (b'server', b'uvicorn'), (b'content-length', b'365'), (b'content-type', b'application/json')])
+2024-08-15 13:06:13,823 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 13:06:13,823 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 13:06:13,823 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:06:13,824 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:06:13,824 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:06:13,827 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:06:13,827 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:06:13,827 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:06:13,827 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:06:33,582 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:05:53 GMT'), (b'server', b'uvicorn'), (b'content-length', b'139'), (b'content-type', b'application/json')])
+2024-08-15 13:06:33,583 - httpx - INFO - HTTP Request: POST http://model_api:8001/generate "HTTP/1.1 200 OK"
+2024-08-15 13:06:33,583 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 13:06:33,583 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:06:33,583 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:06:33,583 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:06:33,583 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:06:33,583 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:06:33,583 - user_api - DEBUG - model data: {'object_3d': '/data/storage/objects/000008_bicycle_small_vehicle.glb', 'object_2d': '/data/storage/renders/000008_bicycle_small_vehicle.gif'}
+2024-08-15 13:06:33,584 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 13:06:33,585 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030315580>
+2024-08-15 13:06:33,585 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 13:06:33,585 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:06:33,585 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 13:06:33,585 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:06:33,585 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 13:06:33,597 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:06:33 GMT'), (b'server', b'uvicorn'), (b'content-length', b'361'), (b'content-type', b'application/json')])
+2024-08-15 13:06:33,597 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 13:06:33,597 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 13:06:33,597 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:06:33,597 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:06:33,597 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:06:33,618 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:06:33,618 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:06:33,618 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:06:33,618 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:10:46,969 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 13:10:46,970 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 13:10:46,993 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 13:10:46,994 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff03036d070>
+2024-08-15 13:10:46,994 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 13:10:46,994 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:10:46,994 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 13:10:46,994 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:10:46,994 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 13:10:47,002 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:10:46 GMT'), (b'server', b'uvicorn'), (b'content-length', b'1351'), (b'content-type', b'application/json')])
+2024-08-15 13:10:47,002 - httpx - INFO - HTTP Request: GET http://data_api:8000/images/bicycle?page=2&page_size=21 "HTTP/1.1 200 OK"
+2024-08-15 13:10:47,002 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 13:10:47,003 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:10:47,003 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:10:47,003 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:10:47,003 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:10:47,003 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:10:56,420 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-08-15 13:10:56,420 - multipart.multipart - DEBUG - Calling on_field_name with data[0:19]
+2024-08-15 13:10:56,421 - multipart.multipart - DEBUG - Calling on_field_data with data[20:91]
+2024-08-15 13:10:56,421 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-08-15 13:10:56,421 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-08-15 13:10:56,421 - user_api - DEBUG - Selected image path: /data/storage/images/bicycle/000025_vespa_scooter_bicycle.png
+2024-08-15 13:10:56,421 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 13:10:56,421 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 13:10:56,436 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 13:10:56,437 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff032638df0>
+2024-08-15 13:10:56,437 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 13:10:56,437 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:10:56,437 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 13:10:56,437 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:10:56,437 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 13:10:56,468 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:10:56 GMT'), (b'server', b'uvicorn'), (b'content-length', b'361'), (b'content-type', b'application/json')])
+2024-08-15 13:10:56,469 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 13:10:56,469 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 13:10:56,469 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:10:56,469 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:10:56,469 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:10:56,469 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:10:56,469 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:10:56,527 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 13:10:56,527 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 13:10:56,545 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 13:10:56,546 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0303151f0>
+2024-08-15 13:10:56,546 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 13:10:56,546 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:10:56,546 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 13:10:56,546 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:10:56,546 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 13:10:56,550 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:10:56 GMT'), (b'server', b'uvicorn'), (b'content-length', b'361'), (b'content-type', b'application/json')])
+2024-08-15 13:10:56,550 - httpx - INFO - HTTP Request: GET http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 13:10:56,550 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 13:10:56,550 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:10:56,550 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:10:56,551 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:10:56,551 - user_api - DEBUG - 3D image path: /data/storage/images/bicycle/000025_vespa_scooter_bicycle.png
+2024-08-15 13:10:56,551 - httpcore.connection - DEBUG - connect_tcp.started host='model_api' port=8001 local_address=None timeout=3600 socket_options=None
+2024-08-15 13:10:56,552 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030381130>
+2024-08-15 13:10:56,552 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 13:10:56,552 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:10:56,552 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 13:10:56,552 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:10:56,552 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 13:11:16,775 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:10:56 GMT'), (b'server', b'uvicorn'), (b'content-length', b'139'), (b'content-type', b'application/json')])
+2024-08-15 13:11:16,775 - httpx - INFO - HTTP Request: POST http://model_api:8001/generate "HTTP/1.1 200 OK"
+2024-08-15 13:11:16,775 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 13:11:16,775 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:11:16,775 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:11:16,776 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:11:16,776 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:11:16,776 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:11:16,776 - user_api - DEBUG - model data: {'object_3d': '/data/storage/objects/000025_vespa_scooter_bicycle.glb', 'object_2d': '/data/storage/renders/000025_vespa_scooter_bicycle.gif'}
+2024-08-15 13:11:16,776 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 13:11:16,777 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030300700>
+2024-08-15 13:11:16,777 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 13:11:16,777 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:11:16,777 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 13:11:16,777 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:11:16,777 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 13:11:16,785 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:11:16 GMT'), (b'server', b'uvicorn'), (b'content-length', b'361'), (b'content-type', b'application/json')])
+2024-08-15 13:11:16,785 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 13:11:16,785 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 13:11:16,785 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:11:16,785 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:11:16,785 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:11:16,804 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:11:16,804 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:11:16,804 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:11:16,804 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:12:47,579 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-08-15 13:12:47,579 - multipart.multipart - DEBUG - Calling on_field_name with data[0:19]
+2024-08-15 13:12:47,579 - multipart.multipart - DEBUG - Calling on_field_data with data[20:97]
+2024-08-15 13:12:47,579 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-08-15 13:12:47,579 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-08-15 13:12:47,580 - user_api - DEBUG - Selected image path: /data/storage/images/bicycle/000017_bicycle_transportation_bike.png
+2024-08-15 13:12:47,580 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 13:12:47,580 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 13:12:47,595 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 13:12:47,596 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302c3f70>
+2024-08-15 13:12:47,596 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 13:12:47,597 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:12:47,597 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 13:12:47,597 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:12:47,597 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 13:12:47,605 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:12:46 GMT'), (b'server', b'uvicorn'), (b'content-length', b'367'), (b'content-type', b'application/json')])
+2024-08-15 13:12:47,605 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 13:12:47,605 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 13:12:47,605 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:12:47,605 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:12:47,605 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:12:47,606 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:12:47,606 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:12:47,669 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 13:12:47,669 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 13:12:47,692 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 13:12:47,693 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0303c2910>
+2024-08-15 13:12:47,693 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 13:12:47,694 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:12:47,694 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 13:12:47,694 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:12:47,694 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 13:12:47,698 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:12:46 GMT'), (b'server', b'uvicorn'), (b'content-length', b'367'), (b'content-type', b'application/json')])
+2024-08-15 13:12:47,698 - httpx - INFO - HTTP Request: GET http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 13:12:47,698 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 13:12:47,698 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:12:47,698 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:12:47,699 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:12:47,699 - user_api - DEBUG - 3D image path: /data/storage/images/bicycle/000017_bicycle_transportation_bike.png
+2024-08-15 13:12:47,699 - httpcore.connection - DEBUG - connect_tcp.started host='model_api' port=8001 local_address=None timeout=3600 socket_options=None
+2024-08-15 13:12:47,700 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030381880>
+2024-08-15 13:12:47,700 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 13:12:47,700 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:12:47,700 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 13:12:47,700 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:12:47,700 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 13:13:07,785 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:12:46 GMT'), (b'server', b'uvicorn'), (b'content-length', b'151'), (b'content-type', b'application/json')])
+2024-08-15 13:13:07,785 - httpx - INFO - HTTP Request: POST http://model_api:8001/generate "HTTP/1.1 200 OK"
+2024-08-15 13:13:07,785 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 13:13:07,785 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:13:07,785 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:13:07,785 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:13:07,785 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:13:07,786 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:13:07,786 - user_api - DEBUG - model data: {'object_3d': '/data/storage/objects/000017_bicycle_transportation_bike.glb', 'object_2d': '/data/storage/renders/000017_bicycle_transportation_bike.gif'}
+2024-08-15 13:13:07,786 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 13:13:07,787 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0303810d0>
+2024-08-15 13:13:07,787 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 13:13:07,787 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:13:07,787 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 13:13:07,787 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:13:07,787 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 13:13:07,801 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:13:06 GMT'), (b'server', b'uvicorn'), (b'content-length', b'379'), (b'content-type', b'application/json')])
+2024-08-15 13:13:07,801 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 13:13:07,801 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 13:13:07,801 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:13:07,801 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:13:07,801 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:13:07,821 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:13:07,821 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:13:07,821 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:13:07,821 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:13:26,546 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 13:13:26,546 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 13:13:26,562 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 13:13:26,563 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff02f9787f0>
+2024-08-15 13:13:26,563 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 13:13:26,564 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:13:26,564 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 13:13:26,564 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:13:26,564 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 13:13:26,567 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:13:25 GMT'), (b'server', b'uvicorn'), (b'content-length', b'1351'), (b'content-type', b'application/json')])
+2024-08-15 13:13:26,567 - httpx - INFO - HTTP Request: GET http://data_api:8000/images/bicycle?page=2&page_size=21 "HTTP/1.1 200 OK"
+2024-08-15 13:13:26,567 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 13:13:26,567 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:13:26,567 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:13:26,567 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:13:26,568 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:13:26,568 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:13:46,594 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-08-15 13:13:46,594 - multipart.multipart - DEBUG - Calling on_field_name with data[0:19]
+2024-08-15 13:13:46,595 - multipart.multipart - DEBUG - Calling on_field_data with data[20:90]
+2024-08-15 13:13:46,595 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-08-15 13:13:46,595 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-08-15 13:13:46,595 - user_api - DEBUG - Selected image path: /data/storage/images/bicycle/000028_bicycle_blue_vehicle.png
+2024-08-15 13:13:46,595 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 13:13:46,595 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 13:13:46,610 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 13:13:46,611 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff02f97aee0>
+2024-08-15 13:13:46,611 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 13:13:46,611 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:13:46,611 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 13:13:46,611 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:13:46,611 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 13:13:46,626 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:13:45 GMT'), (b'server', b'uvicorn'), (b'content-length', b'372'), (b'content-type', b'application/json')])
+2024-08-15 13:13:46,626 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 13:13:46,626 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 13:13:46,626 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:13:46,626 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:13:46,627 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:13:46,627 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:13:46,627 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:13:46,690 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 13:13:46,690 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 13:13:46,705 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 13:13:46,706 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302c1c70>
+2024-08-15 13:13:46,706 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 13:13:46,707 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:13:46,707 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 13:13:46,707 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:13:46,707 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 13:13:46,712 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:13:45 GMT'), (b'server', b'uvicorn'), (b'content-length', b'372'), (b'content-type', b'application/json')])
+2024-08-15 13:13:46,712 - httpx - INFO - HTTP Request: GET http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 13:13:46,712 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 13:13:46,712 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:13:46,712 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:13:46,712 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:13:46,712 - user_api - DEBUG - 3D image path: /data/storage/images/bicycle/000028_bicycle_blue_vehicle.png
+2024-08-15 13:13:46,714 - httpcore.connection - DEBUG - connect_tcp.started host='model_api' port=8001 local_address=None timeout=3600 socket_options=None
+2024-08-15 13:13:46,716 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff03037af70>
+2024-08-15 13:13:46,716 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 13:13:46,716 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:13:46,716 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 13:13:46,716 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:13:46,716 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 13:14:06,953 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:13:45 GMT'), (b'server', b'uvicorn'), (b'content-length', b'137'), (b'content-type', b'application/json')])
+2024-08-15 13:14:06,953 - httpx - INFO - HTTP Request: POST http://model_api:8001/generate "HTTP/1.1 200 OK"
+2024-08-15 13:14:06,953 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 13:14:06,953 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:14:06,954 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:14:06,954 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:14:06,954 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:14:06,954 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:14:06,954 - user_api - DEBUG - model data: {'object_3d': '/data/storage/objects/000028_bicycle_blue_vehicle.glb', 'object_2d': '/data/storage/renders/000028_bicycle_blue_vehicle.gif'}
+2024-08-15 13:14:06,954 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 13:14:06,955 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302c3130>
+2024-08-15 13:14:06,955 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 13:14:06,955 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 13:14:06,955 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 13:14:06,956 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 13:14:06,956 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 13:14:06,963 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 13:14:06 GMT'), (b'server', b'uvicorn'), (b'content-length', b'358'), (b'content-type', b'application/json')])
+2024-08-15 13:14:06,963 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 13:14:06,963 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 13:14:06,964 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 13:14:06,964 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 13:14:06,964 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 13:14:06,984 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:14:06,984 - httpcore.connection - DEBUG - close.complete
+2024-08-15 13:14:06,984 - httpcore.connection - DEBUG - close.started
+2024-08-15 13:14:06,984 - httpcore.connection - DEBUG - close.complete
+2024-08-15 14:27:11,383 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 14:27:11,383 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 14:27:11,400 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 14:27:11,401 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030315520>
+2024-08-15 14:27:11,401 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 14:27:11,401 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 14:27:11,401 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 14:27:11,401 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 14:27:11,401 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 14:27:11,404 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 14:27:11 GMT'), (b'server', b'uvicorn'), (b'content-length', b'1365'), (b'content-type', b'application/json')])
+2024-08-15 14:27:11,404 - httpx - INFO - HTTP Request: GET http://data_api:8000/images/bicycle?page=1&page_size=21 "HTTP/1.1 200 OK"
+2024-08-15 14:27:11,405 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 14:27:11,405 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 14:27:11,405 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 14:27:11,405 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 14:27:11,405 - httpcore.connection - DEBUG - close.started
+2024-08-15 14:27:11,405 - httpcore.connection - DEBUG - close.complete
+2024-08-15 14:27:11,405 - user_api - DEBUG - image paths: ['/data/storage/images/bicycle/000000_bicycle_bike_cycling.png', '/data/storage/images/bicycle/000001_racing bicycle_racer_racing bike.png', '/data/storage/images/bicycle/000002_bike_cute_bicycle.png', '/data/storage/images/bicycle/000003_bicycle_bike_silhouette.png', '/data/storage/images/bicycle/000004_bicycle_bike_vehicle.png', '/data/storage/images/bicycle/000005_balloons_basket_bicycle.png', '/data/storage/images/bicycle/000006_bicycle_bike_black.png', '/data/storage/images/bicycle/000007_bicycle_bike_female.png', '/data/storage/images/bicycle/000008_bicycle_small_vehicle.png', '/data/storage/images/bicycle/000009_bike_bicycle_ride.png', '/data/storage/images/bicycle/000010_bicycle_bike_cycle.png', '/data/storage/images/bicycle/000011_bicycle_vehicle_cycling.png', '/data/storage/images/bicycle/000012_bicycle_bike_icons.png', '/data/storage/images/bicycle/000013_high-wheel bicycle_bicycle_high wheeler.png', '/data/storage/images/bicycle/000014_cyclist_bicycle_bike.png', '/data/storage/images/bicycle/000015_road signs_bicycle_cycle.png', '/data/storage/images/bicycle/000016_bike_bicycle_line art.png', '/data/storage/images/bicycle/000017_bicycle_transportation_bike.png', '/data/storage/images/bicycle/000018_bicycle_bike_cycling.png', '/data/storage/images/bicycle/000020_bike_bicycle_line art.png', '/data/storage/images/bicycle/000021_athlete_bicycle_bike.png']
+2024-08-15 14:27:30,116 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-08-15 14:27:30,116 - multipart.multipart - DEBUG - Calling on_field_name with data[0:19]
+2024-08-15 14:27:30,116 - multipart.multipart - DEBUG - Calling on_field_data with data[20:90]
+2024-08-15 14:27:30,116 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-08-15 14:27:30,117 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-08-15 14:27:30,117 - user_api - DEBUG - Selected image path: /data/storage/images/bicycle/000000_bicycle_bike_cycling.png
+2024-08-15 14:27:30,117 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 14:27:30,118 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 14:27:30,134 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 14:27:30,135 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302cd070>
+2024-08-15 14:27:30,136 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 14:27:30,136 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 14:27:30,136 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 14:27:30,136 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 14:27:30,136 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 14:27:30,190 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 14:27:29 GMT'), (b'server', b'uvicorn'), (b'content-length', b'358'), (b'content-type', b'application/json')])
+2024-08-15 14:27:30,190 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 14:27:30,190 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 14:27:30,190 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 14:27:30,190 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 14:27:30,190 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 14:27:30,190 - httpcore.connection - DEBUG - close.started
+2024-08-15 14:27:30,190 - httpcore.connection - DEBUG - close.complete
+2024-08-15 14:27:30,262 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 14:27:30,263 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 14:27:30,281 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 14:27:30,282 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302c3b80>
+2024-08-15 14:27:30,282 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 14:27:30,282 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 14:27:30,282 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 14:27:30,283 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 14:27:30,283 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 14:27:30,286 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 14:27:30 GMT'), (b'server', b'uvicorn'), (b'content-length', b'358'), (b'content-type', b'application/json')])
+2024-08-15 14:27:30,287 - httpx - INFO - HTTP Request: GET http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 14:27:30,287 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 14:27:30,287 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 14:27:30,287 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 14:27:30,288 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 14:27:30,288 - user_api - DEBUG - 3D image path: /data/storage/images/bicycle/000000_bicycle_bike_cycling.png
+2024-08-15 14:27:30,288 - httpcore.connection - DEBUG - connect_tcp.started host='model_api' port=8001 local_address=None timeout=3600 socket_options=None
+2024-08-15 14:27:30,289 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030363970>
+2024-08-15 14:27:30,289 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 14:27:30,289 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 14:27:30,289 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 14:27:30,289 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 14:27:30,289 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 14:27:50,859 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 14:27:29 GMT'), (b'server', b'uvicorn'), (b'content-length', b'137'), (b'content-type', b'application/json')])
+2024-08-15 14:27:50,859 - httpx - INFO - HTTP Request: POST http://model_api:8001/generate "HTTP/1.1 200 OK"
+2024-08-15 14:27:50,859 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 14:27:50,859 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 14:27:50,859 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 14:27:50,859 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 14:27:50,859 - httpcore.connection - DEBUG - close.started
+2024-08-15 14:27:50,859 - httpcore.connection - DEBUG - close.complete
+2024-08-15 14:27:50,860 - user_api - DEBUG - model data: {'object_3d': '/data/storage/objects/000000_bicycle_bike_cycling.glb', 'object_2d': '/data/storage/renders/000000_bicycle_bike_cycling.gif'}
+2024-08-15 14:27:50,860 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 14:27:50,861 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0303fd370>
+2024-08-15 14:27:50,861 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 14:27:50,861 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 14:27:50,861 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 14:27:50,861 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 14:27:50,861 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 14:27:50,867 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 14:27:50 GMT'), (b'server', b'uvicorn'), (b'content-length', b'358'), (b'content-type', b'application/json')])
+2024-08-15 14:27:50,867 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 14:27:50,868 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 14:27:50,868 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 14:27:50,868 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 14:27:50,868 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 14:27:50,891 - httpcore.connection - DEBUG - close.started
+2024-08-15 14:27:50,891 - httpcore.connection - DEBUG - close.complete
+2024-08-15 14:27:50,891 - httpcore.connection - DEBUG - close.started
+2024-08-15 14:27:50,891 - httpcore.connection - DEBUG - close.complete
+2024-08-15 14:38:33,039 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-08-15 14:38:33,039 - multipart.multipart - DEBUG - Calling on_field_name with data[0:19]
+2024-08-15 14:38:33,040 - multipart.multipart - DEBUG - Calling on_field_data with data[20:90]
+2024-08-15 14:38:33,040 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-08-15 14:38:33,040 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-08-15 14:38:33,040 - user_api - DEBUG - Selected image path: /data/storage/images/bicycle/000000_bicycle_bike_cycling.png
+2024-08-15 14:38:33,040 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 14:38:33,041 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 14:38:33,061 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 14:38:33,062 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030c50040>
+2024-08-15 14:38:33,062 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 14:38:33,063 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 14:38:33,063 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 14:38:33,063 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 14:38:33,063 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 14:38:33,067 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 14:38:32 GMT'), (b'server', b'uvicorn'), (b'content-length', b'358'), (b'content-type', b'application/json')])
+2024-08-15 14:38:33,067 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 14:38:33,067 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 14:38:33,067 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 14:38:33,067 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 14:38:33,067 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 14:38:33,067 - httpcore.connection - DEBUG - close.started
+2024-08-15 14:38:33,068 - httpcore.connection - DEBUG - close.complete
+2024-08-15 14:38:33,147 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 14:38:33,148 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 14:38:33,163 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 14:38:33,164 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff03037a550>
+2024-08-15 14:38:33,164 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 14:38:33,164 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 14:38:33,164 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 14:38:33,164 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 14:38:33,164 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 14:38:33,169 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 14:38:32 GMT'), (b'server', b'uvicorn'), (b'content-length', b'358'), (b'content-type', b'application/json')])
+2024-08-15 14:38:33,169 - httpx - INFO - HTTP Request: GET http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 14:38:33,169 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 14:38:33,169 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 14:38:33,170 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 14:38:33,170 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 14:38:33,170 - user_api - DEBUG - 3D image path: /data/storage/images/bicycle/000000_bicycle_bike_cycling.png
+2024-08-15 14:38:33,170 - httpcore.connection - DEBUG - connect_tcp.started host='model_api' port=8001 local_address=None timeout=3600 socket_options=None
+2024-08-15 14:38:33,171 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030363af0>
+2024-08-15 14:38:33,172 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 14:38:33,172 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 14:38:33,172 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 14:38:33,172 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 14:38:33,172 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 14:38:53,389 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 14:38:32 GMT'), (b'server', b'uvicorn'), (b'content-length', b'137'), (b'content-type', b'application/json')])
+2024-08-15 14:38:53,389 - httpx - INFO - HTTP Request: POST http://model_api:8001/generate "HTTP/1.1 200 OK"
+2024-08-15 14:38:53,390 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 14:38:53,390 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 14:38:53,390 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 14:38:53,390 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 14:38:53,390 - httpcore.connection - DEBUG - close.started
+2024-08-15 14:38:53,390 - httpcore.connection - DEBUG - close.complete
+2024-08-15 14:38:53,390 - user_api - DEBUG - model data: {'object_3d': '/data/storage/objects/000000_bicycle_bike_cycling.glb', 'object_2d': '/data/storage/renders/000000_bicycle_bike_cycling.gif'}
+2024-08-15 14:38:53,390 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 14:38:53,391 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302c1dc0>
+2024-08-15 14:38:53,391 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 14:38:53,391 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 14:38:53,391 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 14:38:53,392 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 14:38:53,392 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 14:38:53,396 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 14:38:52 GMT'), (b'server', b'uvicorn'), (b'content-length', b'358'), (b'content-type', b'application/json')])
+2024-08-15 14:38:53,396 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 14:38:53,396 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 14:38:53,397 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 14:38:53,397 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 14:38:53,397 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 14:38:53,419 - httpcore.connection - DEBUG - close.started
+2024-08-15 14:38:53,419 - httpcore.connection - DEBUG - close.complete
+2024-08-15 14:38:53,419 - httpcore.connection - DEBUG - close.started
+2024-08-15 14:38:53,419 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:07:29,324 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:07:29,324 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:07:29,341 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 17:07:29,342 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff02f978a60>
+2024-08-15 17:07:29,342 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 17:07:29,342 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:07:29,342 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 17:07:29,342 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:07:29,342 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 17:07:29,346 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:07:28 GMT'), (b'server', b'uvicorn'), (b'content-length', b'358'), (b'content-type', b'application/json')])
+2024-08-15 17:07:29,347 - httpx - INFO - HTTP Request: GET http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 17:07:29,347 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 17:07:29,347 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:07:29,347 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:07:29,347 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:07:29,347 - user_api - DEBUG - 3D image path: /data/storage/images/bicycle/000000_bicycle_bike_cycling.png
+2024-08-15 17:07:29,347 - httpcore.connection - DEBUG - connect_tcp.started host='model_api' port=8001 local_address=None timeout=3600 socket_options=None
+2024-08-15 17:07:29,348 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302cf610>
+2024-08-15 17:07:29,348 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 17:07:29,349 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:07:29,349 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 17:07:29,349 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:07:29,349 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 17:07:34,325 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:07:34,326 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:07:34,350 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 17:07:34,355 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff032638b50>
+2024-08-15 17:07:34,355 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 17:07:34,356 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:07:34,356 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 17:07:34,356 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:07:34,356 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 17:07:34,360 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:07:33 GMT'), (b'server', b'uvicorn'), (b'content-length', b'67'), (b'content-type', b'application/json')])
+2024-08-15 17:07:34,360 - httpx - INFO - HTTP Request: GET http://data_api:8000/categories "HTTP/1.1 200 OK"
+2024-08-15 17:07:34,360 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 17:07:34,360 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:07:34,360 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:07:34,360 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:07:34,361 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:07:34,361 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:07:45,701 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-08-15 17:07:45,701 - multipart.multipart - DEBUG - Calling on_field_name with data[0:17]
+2024-08-15 17:07:45,701 - multipart.multipart - DEBUG - Calling on_field_data with data[18:23]
+2024-08-15 17:07:45,701 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-08-15 17:07:45,701 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-08-15 17:07:45,702 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:07:45,702 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:07:45,717 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 17:07:45,719 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff03036d5b0>
+2024-08-15 17:07:45,719 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 17:07:45,719 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:07:45,719 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 17:07:45,719 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:07:45,719 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 17:07:45,733 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:07:44 GMT'), (b'server', b'uvicorn'), (b'content-length', b'198'), (b'content-type', b'application/json')])
+2024-08-15 17:07:45,733 - httpx - INFO - HTTP Request: POST http://data_api:8000/usages "HTTP/1.1 200 OK"
+2024-08-15 17:07:45,733 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 17:07:45,733 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:07:45,734 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:07:45,734 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:07:45,734 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:07:45,734 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:07:45,734 - user_api - DEBUG - Selection time: 2024-08-15T17:07:45.702093
+2024-08-15 17:07:45,734 - user_api - DEBUG - Selected category: train
+2024-08-15 17:07:45,737 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:07:45,737 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:07:45,756 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 17:07:45,758 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0303c27c0>
+2024-08-15 17:07:45,758 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 17:07:45,758 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:07:45,758 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 17:07:45,758 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:07:45,758 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 17:07:45,761 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:07:45 GMT'), (b'server', b'uvicorn'), (b'content-length', b'1331'), (b'content-type', b'application/json')])
+2024-08-15 17:07:45,762 - httpx - INFO - HTTP Request: GET http://data_api:8000/images/train?page=1&page_size=21 "HTTP/1.1 200 OK"
+2024-08-15 17:07:45,762 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 17:07:45,762 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:07:45,762 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:07:45,762 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:07:45,762 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:07:45,762 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:07:45,762 - user_api - DEBUG - image paths: ['/data/storage/images/train/000000_train_steam_transportation.png', '/data/storage/images/train/000001_toy train_blue_locomotive.png', '/data/storage/images/train/000002_train_locomotive_line art.png', '/data/storage/images/train/000003_train_cartoon_toy.png', '/data/storage/images/train/000004_train_transportation_cutout.png', '/data/storage/images/train/000005_toy_train_locomotive.png', '/data/storage/images/train/000006_locomotive_loc_train.png', '/data/storage/images/train/000011_train_air_sky.png', '/data/storage/images/train/000012_train_locomotive_line art.png', '/data/storage/images/train/000013_steam_locomotive_train.png', '/data/storage/images/train/000015_train_railway_locomotive.png', '/data/storage/images/train/000017_high speed train_railway_ice.png', '/data/storage/images/train/000018_train_locomotive_line art.png', '/data/storage/images/train/000020_toy_train_locomotive.png', '/data/storage/images/train/000022_amtrak_high speed train_transportation.png', '/data/storage/images/train/000023_steam_engine_train.png', '/data/storage/images/train/000025_train_toy_play.png', '/data/storage/images/train/000026_ship_train_car.png', '/data/storage/images/train/000027_train_railroad_locomotive.png', '/data/storage/images/train/000028_train_locomotive_line art.png', '/data/storage/images/train/000029_train_rail_traffic.png']
+2024-08-15 17:07:49,699 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:07:28 GMT'), (b'server', b'uvicorn'), (b'content-length', b'137'), (b'content-type', b'application/json')])
+2024-08-15 17:07:49,699 - httpx - INFO - HTTP Request: POST http://model_api:8001/generate "HTTP/1.1 200 OK"
+2024-08-15 17:07:49,699 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 17:07:49,699 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:07:49,699 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:07:49,699 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:07:49,699 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:07:49,700 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:07:49,700 - user_api - DEBUG - model data: {'object_3d': '/data/storage/objects/000000_bicycle_bike_cycling.glb', 'object_2d': '/data/storage/renders/000000_bicycle_bike_cycling.gif'}
+2024-08-15 17:07:49,700 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 17:07:49,701 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302cff70>
+2024-08-15 17:07:49,701 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 17:07:49,701 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:07:49,701 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 17:07:49,701 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:07:49,701 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 17:07:49,708 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:07:48 GMT'), (b'server', b'uvicorn'), (b'content-length', b'300'), (b'content-type', b'application/json')])
+2024-08-15 17:07:49,708 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 17:07:49,708 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 17:07:49,708 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:07:49,708 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:07:49,708 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:07:49,711 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:07:49,711 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:07:49,711 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:07:49,711 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:11:06,142 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-08-15 17:11:06,142 - multipart.multipart - DEBUG - Calling on_field_name with data[0:19]
+2024-08-15 17:11:06,142 - multipart.multipart - DEBUG - Calling on_field_data with data[20:88]
+2024-08-15 17:11:06,142 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-08-15 17:11:06,142 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-08-15 17:11:06,142 - user_api - DEBUG - Selected image path: /data/storage/images/train/000006_locomotive_loc_train.png
+2024-08-15 17:11:06,142 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:11:06,143 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:11:06,157 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 17:11:06,158 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030363640>
+2024-08-15 17:11:06,159 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 17:11:06,159 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:11:06,159 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 17:11:06,159 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:11:06,159 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 17:11:06,211 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:11:05 GMT'), (b'server', b'uvicorn'), (b'content-length', b'356'), (b'content-type', b'application/json')])
+2024-08-15 17:11:06,211 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 17:11:06,211 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 17:11:06,211 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:11:06,211 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:11:06,211 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:11:06,211 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:11:06,212 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:11:06,273 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:11:06,274 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:11:06,291 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 17:11:06,292 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030cabd30>
+2024-08-15 17:11:06,292 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 17:11:06,292 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:11:06,292 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 17:11:06,292 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:11:06,292 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 17:11:06,295 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:11:05 GMT'), (b'server', b'uvicorn'), (b'content-length', b'356'), (b'content-type', b'application/json')])
+2024-08-15 17:11:06,296 - httpx - INFO - HTTP Request: GET http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 17:11:06,296 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 17:11:06,296 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:11:06,296 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:11:06,296 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:11:06,296 - user_api - DEBUG - 3D image path: /data/storage/images/train/000006_locomotive_loc_train.png
+2024-08-15 17:11:06,297 - httpcore.connection - DEBUG - connect_tcp.started host='model_api' port=8001 local_address=None timeout=3600 socket_options=None
+2024-08-15 17:11:06,297 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302c1bb0>
+2024-08-15 17:11:06,298 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 17:11:06,298 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:11:06,298 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 17:11:06,298 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:11:06,298 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 17:11:26,563 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:11:05 GMT'), (b'server', b'uvicorn'), (b'content-length', b'137'), (b'content-type', b'application/json')])
+2024-08-15 17:11:26,563 - httpx - INFO - HTTP Request: POST http://model_api:8001/generate "HTTP/1.1 200 OK"
+2024-08-15 17:11:26,563 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 17:11:26,563 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:11:26,563 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:11:26,563 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:11:26,564 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:11:26,564 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:11:26,564 - user_api - DEBUG - model data: {'object_3d': '/data/storage/objects/000006_locomotive_loc_train.glb', 'object_2d': '/data/storage/renders/000006_locomotive_loc_train.gif'}
+2024-08-15 17:11:26,564 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 17:11:26,565 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030381c40>
+2024-08-15 17:11:26,565 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 17:11:26,565 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:11:26,565 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 17:11:26,565 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:11:26,566 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 17:11:26,578 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:11:25 GMT'), (b'server', b'uvicorn'), (b'content-length', b'356'), (b'content-type', b'application/json')])
+2024-08-15 17:11:26,578 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 17:11:26,578 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 17:11:26,578 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:11:26,578 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:11:26,578 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:11:26,601 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:11:26,601 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:11:26,601 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:11:26,601 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:14:19,094 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:14:19,095 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:14:19,110 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 17:14:19,113 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030c938e0>
+2024-08-15 17:14:19,113 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 17:14:19,114 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:14:19,114 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 17:14:19,114 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:14:19,114 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 17:14:19,117 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:14:18 GMT'), (b'server', b'uvicorn'), (b'content-length', b'356'), (b'content-type', b'application/json')])
+2024-08-15 17:14:19,117 - httpx - INFO - HTTP Request: GET http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 17:14:19,117 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 17:14:19,118 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:14:19,118 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:14:19,118 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:14:19,118 - user_api - DEBUG - 3D image path: /data/storage/images/train/000006_locomotive_loc_train.png
+2024-08-15 17:14:19,118 - httpcore.connection - DEBUG - connect_tcp.started host='model_api' port=8001 local_address=None timeout=3600 socket_options=None
+2024-08-15 17:14:19,119 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302c1a90>
+2024-08-15 17:14:19,119 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 17:14:19,119 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:14:19,119 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 17:14:19,119 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:14:19,119 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 17:14:29,982 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-08-15 17:14:29,982 - multipart.multipart - DEBUG - Calling on_field_name with data[0:17]
+2024-08-15 17:14:29,982 - multipart.multipart - DEBUG - Calling on_field_data with data[18:23]
+2024-08-15 17:14:29,982 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-08-15 17:14:29,982 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-08-15 17:14:29,983 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:14:29,983 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:14:30,004 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 17:14:30,005 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030c6b490>
+2024-08-15 17:14:30,005 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 17:14:30,005 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:14:30,005 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 17:14:30,005 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:14:30,005 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 17:14:30,009 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:14:29 GMT'), (b'server', b'uvicorn'), (b'content-length', b'198'), (b'content-type', b'application/json')])
+2024-08-15 17:14:30,009 - httpx - INFO - HTTP Request: POST http://data_api:8000/usages "HTTP/1.1 200 OK"
+2024-08-15 17:14:30,009 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 17:14:30,010 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:14:30,010 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:14:30,010 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:14:30,010 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:14:30,010 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:14:30,010 - user_api - DEBUG - Selection time: 2024-08-15T17:14:29.982958
+2024-08-15 17:14:30,010 - user_api - DEBUG - Selected category: plane
+2024-08-15 17:14:30,013 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:14:30,013 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:14:30,029 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 17:14:30,030 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030c930a0>
+2024-08-15 17:14:30,030 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 17:14:30,030 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:14:30,030 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 17:14:30,030 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:14:30,030 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 17:14:30,034 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:14:29 GMT'), (b'server', b'uvicorn'), (b'content-length', b'1334'), (b'content-type', b'application/json')])
+2024-08-15 17:14:30,034 - httpx - INFO - HTTP Request: GET http://data_api:8000/images/plane?page=1&page_size=21 "HTTP/1.1 200 OK"
+2024-08-15 17:14:30,034 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 17:14:30,034 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:14:30,034 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:14:30,034 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:14:30,034 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:14:30,034 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:14:30,035 - user_api - DEBUG - image paths: ['/data/storage/images/plane/000000_airplane_plane_flying.png', '/data/storage/images/plane/000001_aeroplane_airliner_airbus.png', '/data/storage/images/plane/000002_airplane_plane_transport.png', '/data/storage/images/plane/000003_aircraft_plane_transportation.png', '/data/storage/images/plane/000006_flight_plane_airline.png', '/data/storage/images/plane/000007_airplane_plane_travel.png', '/data/storage/images/plane/000008_airliner_boeing_planes.png', '/data/storage/images/plane/000009_airport_airplane_travel.png', '/data/storage/images/plane/000010_aeroplane_aircraft_airplane.png', '/data/storage/images/plane/000011_airplane_airship_transport.png', '/data/storage/images/plane/000012_plane_air_transport.png', '/data/storage/images/plane/000013_airplane_funny_passenger.png', '/data/storage/images/plane/000014_airplane_plane_aircraft.png', '/data/storage/images/plane/000015_airplane_plane_jumbo.png', '/data/storage/images/plane/000016_airplane_plane_aircraft.png', '/data/storage/images/plane/000017_aeroplane_aircraft_airplane.png', '/data/storage/images/plane/000018_aeroplane_plane_air.png', '/data/storage/images/plane/000019_plane_jet_airplane.png', '/data/storage/images/plane/000020_plane_aircraft_flight.png', '/data/storage/images/plane/000021_airplane_plane_aircraft.png', '/data/storage/images/plane/000022_jet_plane_airline.png']
+2024-08-15 17:14:39,129 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:14:18 GMT'), (b'server', b'uvicorn'), (b'content-length', b'137'), (b'content-type', b'application/json')])
+2024-08-15 17:14:39,129 - httpx - INFO - HTTP Request: POST http://model_api:8001/generate "HTTP/1.1 200 OK"
+2024-08-15 17:14:39,130 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 17:14:39,130 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:14:39,130 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:14:39,130 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:14:39,130 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:14:39,130 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:14:39,130 - user_api - DEBUG - model data: {'object_3d': '/data/storage/objects/000006_locomotive_loc_train.glb', 'object_2d': '/data/storage/renders/000006_locomotive_loc_train.gif'}
+2024-08-15 17:14:39,131 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 17:14:39,132 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0303fd370>
+2024-08-15 17:14:39,132 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 17:14:39,132 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:14:39,132 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 17:14:39,133 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:14:39,133 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 17:14:39,138 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:14:38 GMT'), (b'server', b'uvicorn'), (b'content-length', b'300'), (b'content-type', b'application/json')])
+2024-08-15 17:14:39,138 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 17:14:39,138 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 17:14:39,138 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:14:39,138 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:14:39,138 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:14:39,141 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:14:39,141 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:14:39,141 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:14:39,141 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:14:42,330 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-08-15 17:14:42,330 - multipart.multipart - DEBUG - Calling on_field_name with data[0:19]
+2024-08-15 17:14:42,330 - multipart.multipart - DEBUG - Calling on_field_data with data[20:90]
+2024-08-15 17:14:42,330 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-08-15 17:14:42,330 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-08-15 17:14:42,330 - user_api - DEBUG - Selected image path: /data/storage/images/plane/000008_airliner_boeing_planes.png
+2024-08-15 17:14:42,330 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:14:42,331 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:14:42,349 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 17:14:42,350 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302cdd30>
+2024-08-15 17:14:42,351 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 17:14:42,351 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:14:42,351 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 17:14:42,351 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:14:42,351 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 17:14:42,363 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:14:42 GMT'), (b'server', b'uvicorn'), (b'content-length', b'358'), (b'content-type', b'application/json')])
+2024-08-15 17:14:42,363 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 17:14:42,363 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 17:14:42,363 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:14:42,364 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:14:42,364 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:14:42,364 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:14:42,364 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:14:42,409 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:14:42,410 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:14:42,425 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 17:14:42,426 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302c33d0>
+2024-08-15 17:14:42,426 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 17:14:42,427 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:14:42,427 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 17:14:42,427 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:14:42,427 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 17:14:42,430 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:14:42 GMT'), (b'server', b'uvicorn'), (b'content-length', b'358'), (b'content-type', b'application/json')])
+2024-08-15 17:14:42,430 - httpx - INFO - HTTP Request: GET http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 17:14:42,430 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 17:14:42,430 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:14:42,431 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:14:42,431 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:14:42,431 - user_api - DEBUG - 3D image path: /data/storage/images/plane/000008_airliner_boeing_planes.png
+2024-08-15 17:14:42,431 - httpcore.connection - DEBUG - connect_tcp.started host='model_api' port=8001 local_address=None timeout=3600 socket_options=None
+2024-08-15 17:14:42,432 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030cabeb0>
+2024-08-15 17:14:42,432 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 17:14:42,432 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:14:42,432 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 17:14:42,432 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:14:42,432 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 17:15:00,718 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:14:42 GMT'), (b'server', b'uvicorn'), (b'content-length', b'141'), (b'content-type', b'application/json')])
+2024-08-15 17:15:00,718 - httpx - INFO - HTTP Request: POST http://model_api:8001/generate "HTTP/1.1 200 OK"
+2024-08-15 17:15:00,718 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 17:15:00,718 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:15:00,718 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:15:00,718 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:15:00,719 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:15:00,719 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:15:00,719 - user_api - DEBUG - model data: {'object_3d': '/data/storage/objects/000008_airliner_boeing_planes.glb', 'object_2d': '/data/storage/renders/000008_airliner_boeing_planes.gif'}
+2024-08-15 17:15:00,719 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 17:15:00,720 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff03036de20>
+2024-08-15 17:15:00,720 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 17:15:00,720 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:15:00,720 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 17:15:00,720 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:15:00,720 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 17:15:00,773 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:15:00 GMT'), (b'server', b'uvicorn'), (b'content-length', b'362'), (b'content-type', b'application/json')])
+2024-08-15 17:15:00,773 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 17:15:00,773 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 17:15:00,773 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:15:00,773 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:15:00,773 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:15:00,786 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:15:00,786 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:15:00,786 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:15:00,786 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:19:44,658 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-08-15 17:19:44,659 - multipart.multipart - DEBUG - Calling on_field_name with data[0:17]
+2024-08-15 17:19:44,659 - multipart.multipart - DEBUG - Calling on_field_data with data[18:21]
+2024-08-15 17:19:44,659 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-08-15 17:19:44,659 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-08-15 17:19:44,659 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:19:44,660 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:19:44,676 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 17:19:44,679 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0303157c0>
+2024-08-15 17:19:44,679 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 17:19:44,679 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:19:44,679 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 17:19:44,679 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:19:44,679 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 17:19:44,730 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:19:44 GMT'), (b'server', b'uvicorn'), (b'content-length', b'196'), (b'content-type', b'application/json')])
+2024-08-15 17:19:44,730 - httpx - INFO - HTTP Request: POST http://data_api:8000/usages "HTTP/1.1 200 OK"
+2024-08-15 17:19:44,730 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 17:19:44,730 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:19:44,730 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:19:44,730 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:19:44,731 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:19:44,731 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:19:44,731 - user_api - DEBUG - Selection time: 2024-08-15T17:19:44.659561
+2024-08-15 17:19:44,731 - user_api - DEBUG - Selected category: car
+2024-08-15 17:19:44,734 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:19:44,735 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:19:44,750 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 17:19:44,751 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030c5dd30>
+2024-08-15 17:19:44,751 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 17:19:44,751 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:19:44,751 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 17:19:44,751 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:19:44,752 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 17:19:44,754 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:19:44 GMT'), (b'server', b'uvicorn'), (b'content-length', b'1264'), (b'content-type', b'application/json')])
+2024-08-15 17:19:44,754 - httpx - INFO - HTTP Request: GET http://data_api:8000/images/car?page=1&page_size=21 "HTTP/1.1 200 OK"
+2024-08-15 17:19:44,754 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 17:19:44,755 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:19:44,755 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:19:44,755 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:19:44,755 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:19:44,755 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:19:44,755 - user_api - DEBUG - image paths: ['/data/storage/images/car/000000_oldtimer_car_vintage.png', '/data/storage/images/car/000001_car_auto_sports car.png', '/data/storage/images/car/000002_ford mustang_car_racing car.png', '/data/storage/images/car/000003_car_auto_vehicle.png', '/data/storage/images/car/000004_passenger car_car_automobile.png', '/data/storage/images/car/000005_car_vehicle_transportation.png', '/data/storage/images/car/000006_car_vehicle_sports car.png', '/data/storage/images/car/000007_bmw_car_roadster.png', '/data/storage/images/car/000008_car_vehicle_sports car.png', '/data/storage/images/car/000009_car_sports car_vehicle.png', '/data/storage/images/car/000010_car_auto_sports car.png', '/data/storage/images/car/000011_car_body_auto.png', '/data/storage/images/car/000012_passenger car_car_vehicle.png', '/data/storage/images/car/000013_bmw_car_roadster.png', '/data/storage/images/car/000014_car_vehicle_automobile.png', '/data/storage/images/car/000015_car_auto_sports car.png', '/data/storage/images/car/000016_car_bentley_continental.png', '/data/storage/images/car/000017_car_race car_futuristic.png', '/data/storage/images/car/000018_car_vintage_beetle.png', '/data/storage/images/car/000019_car_vehicle_icon.png', '/data/storage/images/car/000020_ford mustang_roadster_sports car.png']
+2024-08-15 17:19:51,103 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-08-15 17:19:51,104 - multipart.multipart - DEBUG - Calling on_field_name with data[0:19]
+2024-08-15 17:19:51,104 - multipart.multipart - DEBUG - Calling on_field_data with data[20:85]
+2024-08-15 17:19:51,104 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-08-15 17:19:51,104 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-08-15 17:19:51,104 - user_api - DEBUG - Selected image path: /data/storage/images/car/000001_car_auto_sports car.png
+2024-08-15 17:19:51,104 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:19:51,105 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:19:51,120 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 17:19:51,121 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302cd820>
+2024-08-15 17:19:51,121 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 17:19:51,122 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:19:51,122 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 17:19:51,122 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:19:51,122 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 17:19:51,134 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:19:50 GMT'), (b'server', b'uvicorn'), (b'content-length', b'249'), (b'content-type', b'application/json')])
+2024-08-15 17:19:51,134 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 17:19:51,134 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 17:19:51,134 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:19:51,134 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:19:51,134 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:19:51,134 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:19:51,134 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:19:51,194 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:19:51,195 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:19:51,212 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 17:19:51,212 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030315070>
+2024-08-15 17:19:51,212 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 17:19:51,213 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:19:51,213 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 17:19:51,213 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:19:51,213 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 17:19:51,218 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:19:50 GMT'), (b'server', b'uvicorn'), (b'content-length', b'249'), (b'content-type', b'application/json')])
+2024-08-15 17:19:51,218 - httpx - INFO - HTTP Request: GET http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 17:19:51,218 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 17:19:51,218 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:19:51,218 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:19:51,218 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:19:51,218 - user_api - DEBUG - 3D image path: /data/storage/images/car/000001_car_auto_sports car.png
+2024-08-15 17:19:51,219 - httpcore.connection - DEBUG - connect_tcp.started host='model_api' port=8001 local_address=None timeout=3600 socket_options=None
+2024-08-15 17:19:51,220 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030cab730>
+2024-08-15 17:19:51,220 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 17:19:51,220 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:19:51,220 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 17:19:51,220 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:19:51,220 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 17:20:11,376 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:19:50 GMT'), (b'server', b'uvicorn'), (b'content-length', b'135'), (b'content-type', b'application/json')])
+2024-08-15 17:20:11,376 - httpx - INFO - HTTP Request: POST http://model_api:8001/generate "HTTP/1.1 200 OK"
+2024-08-15 17:20:11,376 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 17:20:11,377 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:20:11,377 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:20:11,377 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:20:11,377 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:20:11,377 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:20:11,377 - user_api - DEBUG - model data: {'object_3d': '/data/storage/objects/000001_car_auto_sports car.glb', 'object_2d': '/data/storage/renders/000001_car_auto_sports car.gif'}
+2024-08-15 17:20:11,377 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 17:20:11,378 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0303fd280>
+2024-08-15 17:20:11,378 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 17:20:11,378 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:20:11,378 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 17:20:11,378 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:20:11,378 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 17:20:11,391 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:20:10 GMT'), (b'server', b'uvicorn'), (b'content-length', b'349'), (b'content-type', b'application/json')])
+2024-08-15 17:20:11,391 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 17:20:11,391 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 17:20:11,391 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:20:11,391 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:20:11,392 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:20:11,411 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:20:11,411 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:20:11,411 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:20:11,411 - httpcore.connection - DEBUG - close.complete
+2024-08-15 17:22:27,492 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 17:22:27,493 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 17:22:27,508 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 17:22:27,510 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302cfa30>
+2024-08-15 17:22:27,510 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 17:22:27,511 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 17:22:27,511 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 17:22:27,511 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 17:22:27,511 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 17:22:27,513 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 17:22:26 GMT'), (b'server', b'uvicorn'), (b'content-length', b'67'), (b'content-type', b'application/json')])
+2024-08-15 17:22:27,513 - httpx - INFO - HTTP Request: GET http://data_api:8000/categories "HTTP/1.1 200 OK"
+2024-08-15 17:22:27,513 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 17:22:27,513 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 17:22:27,513 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 17:22:27,513 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 17:22:27,513 - httpcore.connection - DEBUG - close.started
+2024-08-15 17:22:27,513 - httpcore.connection - DEBUG - close.complete
+2024-08-15 18:10:05,249 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-08-15 18:10:05,250 - multipart.multipart - DEBUG - Calling on_field_name with data[0:17]
+2024-08-15 18:10:05,250 - multipart.multipart - DEBUG - Calling on_field_data with data[18:22]
+2024-08-15 18:10:05,250 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-08-15 18:10:05,250 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-08-15 18:10:05,250 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 18:10:05,251 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 18:10:05,265 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 18:10:05,266 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302c32b0>
+2024-08-15 18:10:05,266 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 18:10:05,267 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 18:10:05,267 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 18:10:05,267 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 18:10:05,267 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 18:10:05,317 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 18:10:04 GMT'), (b'server', b'uvicorn'), (b'content-length', b'197'), (b'content-type', b'application/json')])
+2024-08-15 18:10:05,318 - httpx - INFO - HTTP Request: POST http://data_api:8000/usages "HTTP/1.1 200 OK"
+2024-08-15 18:10:05,318 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 18:10:05,318 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 18:10:05,318 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 18:10:05,318 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 18:10:05,318 - httpcore.connection - DEBUG - close.started
+2024-08-15 18:10:05,318 - httpcore.connection - DEBUG - close.complete
+2024-08-15 18:10:05,318 - user_api - DEBUG - Selection time: 2024-08-15T18:10:05.250564
+2024-08-15 18:10:05,318 - user_api - DEBUG - Selected category: boat
+2024-08-15 18:10:05,321 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 18:10:05,322 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 18:10:05,337 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 18:10:05,338 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030315cd0>
+2024-08-15 18:10:05,338 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 18:10:05,338 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 18:10:05,338 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 18:10:05,338 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 18:10:05,338 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 18:10:05,341 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 18:10:04 GMT'), (b'server', b'uvicorn'), (b'content-length', b'1233'), (b'content-type', b'application/json')])
+2024-08-15 18:10:05,341 - httpx - INFO - HTTP Request: GET http://data_api:8000/images/boat?page=1&page_size=21 "HTTP/1.1 200 OK"
+2024-08-15 18:10:05,341 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 18:10:05,341 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 18:10:05,341 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 18:10:05,341 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 18:10:05,341 - httpcore.connection - DEBUG - close.started
+2024-08-15 18:10:05,341 - httpcore.connection - DEBUG - close.complete
+2024-08-15 18:10:05,341 - user_api - DEBUG - image paths: ['/data/storage/images/boat/000000_boat_marine_ocean.png', '/data/storage/images/boat/000001_boat_ocean_nature.png', '/data/storage/images/boat/000002_boat_marine_maritime.png', '/data/storage/images/boat/000003_boat_sailing boat_line art.png', '/data/storage/images/boat/000004_trawler_boat_vehicle.png', '/data/storage/images/boat/000005_boat_row_oars.png', '/data/storage/images/boat/000006_frigate_ship_boat.png', '/data/storage/images/boat/000007_boat_marine_maritime.png', '/data/storage/images/boat/000008_boat_nature_ocean.png', '/data/storage/images/boat/000009_boat_galleon_ship.png', '/data/storage/images/boat/000010_boat_lake_oar.png', '/data/storage/images/boat/000011_boat_powered_steam.png', '/data/storage/images/boat/000012_sailing_sailboat_transportation.png', '/data/storage/images/boat/000014_boat_sail_sailing.png', '/data/storage/images/boat/000015_boat_sail_sailing.png', '/data/storage/images/boat/000016_boat_galleon_ship.png', '/data/storage/images/boat/000018_ship_boat_line art.png', '/data/storage/images/boat/000021_boat_dinghy_lake.png', '/data/storage/images/boat/000022_boat_sail_sailing.png', '/data/storage/images/boat/000023_motorboat_speedboat_boat.png', '/data/storage/images/boat/000024_ship_boat_silhouette.png']
+2024-08-15 18:10:10,384 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 18:10:10,385 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 18:10:10,399 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 18:10:10,400 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff03036dbb0>
+2024-08-15 18:10:10,400 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 18:10:10,400 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 18:10:10,400 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 18:10:10,400 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 18:10:10,400 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 18:10:10,403 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 18:10:09 GMT'), (b'server', b'uvicorn'), (b'content-length', b'1237'), (b'content-type', b'application/json')])
+2024-08-15 18:10:10,403 - httpx - INFO - HTTP Request: GET http://data_api:8000/images/boat?page=2&page_size=21 "HTTP/1.1 200 OK"
+2024-08-15 18:10:10,403 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 18:10:10,404 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 18:10:10,404 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 18:10:10,404 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 18:10:10,404 - httpcore.connection - DEBUG - close.started
+2024-08-15 18:10:10,404 - httpcore.connection - DEBUG - close.complete
+2024-08-15 18:10:17,175 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-08-15 18:10:17,176 - multipart.multipart - DEBUG - Calling on_field_name with data[0:19]
+2024-08-15 18:10:17,176 - multipart.multipart - DEBUG - Calling on_field_data with data[20:98]
+2024-08-15 18:10:17,176 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-08-15 18:10:17,176 - multipart.multipart - DEBUG - Calling on_end with no data
+2024-08-15 18:10:17,176 - user_api - DEBUG - Selected image path: /data/storage/images/boat/000037_sailing_sailboat_transportation.png
+2024-08-15 18:10:17,176 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 18:10:17,176 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 18:10:17,192 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 18:10:17,193 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff030363760>
+2024-08-15 18:10:17,193 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 18:10:17,193 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 18:10:17,193 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 18:10:17,193 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 18:10:17,193 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 18:10:17,201 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 18:10:16 GMT'), (b'server', b'uvicorn'), (b'content-length', b'263'), (b'content-type', b'application/json')])
+2024-08-15 18:10:17,201 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 18:10:17,201 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 18:10:17,201 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 18:10:17,201 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 18:10:17,201 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 18:10:17,201 - httpcore.connection - DEBUG - close.started
+2024-08-15 18:10:17,201 - httpcore.connection - DEBUG - close.complete
+2024-08-15 18:10:17,281 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 18:10:17,282 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 18:10:17,297 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 18:10:17,298 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302c39d0>
+2024-08-15 18:10:17,298 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 18:10:17,299 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 18:10:17,299 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 18:10:17,299 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 18:10:17,299 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 18:10:17,303 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 18:10:16 GMT'), (b'server', b'uvicorn'), (b'content-length', b'263'), (b'content-type', b'application/json')])
+2024-08-15 18:10:17,303 - httpx - INFO - HTTP Request: GET http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 18:10:17,304 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 18:10:17,304 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 18:10:17,304 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 18:10:17,304 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 18:10:17,304 - user_api - DEBUG - 3D image path: /data/storage/images/boat/000037_sailing_sailboat_transportation.png
+2024-08-15 18:10:17,305 - httpcore.connection - DEBUG - connect_tcp.started host='model_api' port=8001 local_address=None timeout=3600 socket_options=None
+2024-08-15 18:10:17,306 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff03037ad30>
+2024-08-15 18:10:17,306 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-08-15 18:10:17,306 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 18:10:17,306 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-08-15 18:10:17,306 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 18:10:17,307 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-08-15 18:10:37,770 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 18:10:17 GMT'), (b'server', b'uvicorn'), (b'content-length', b'159'), (b'content-type', b'application/json')])
+2024-08-15 18:10:37,776 - httpx - INFO - HTTP Request: POST http://model_api:8001/generate "HTTP/1.1 200 OK"
+2024-08-15 18:10:37,776 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-08-15 18:10:37,776 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 18:10:37,777 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 18:10:37,777 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 18:10:37,777 - httpcore.connection - DEBUG - close.started
+2024-08-15 18:10:37,777 - httpcore.connection - DEBUG - close.complete
+2024-08-15 18:10:37,777 - user_api - DEBUG - model data: {'object_3d': '/data/storage/objects/000037_sailing_sailboat_transportation.glb', 'object_2d': '/data/storage/renders/000037_sailing_sailboat_transportation.gif'}
+2024-08-15 18:10:37,777 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=3600 socket_options=None
+2024-08-15 18:10:37,778 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302c17c0>
+2024-08-15 18:10:37,778 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'PUT']>
+2024-08-15 18:10:37,778 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 18:10:37,778 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'PUT']>
+2024-08-15 18:10:37,779 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 18:10:37,779 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'PUT']>
+2024-08-15 18:10:37,785 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 18:10:37 GMT'), (b'server', b'uvicorn'), (b'content-length', b'387'), (b'content-type', b'application/json')])
+2024-08-15 18:10:37,785 - httpx - INFO - HTTP Request: PUT http://data_api:8000/usages/latest "HTTP/1.1 200 OK"
+2024-08-15 18:10:37,785 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'PUT']>
+2024-08-15 18:10:37,785 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 18:10:37,785 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 18:10:37,785 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 18:10:37,808 - httpcore.connection - DEBUG - close.started
+2024-08-15 18:10:37,809 - httpcore.connection - DEBUG - close.complete
+2024-08-15 18:10:37,809 - httpcore.connection - DEBUG - close.started
+2024-08-15 18:10:37,809 - httpcore.connection - DEBUG - close.complete
+2024-08-15 18:11:16,844 - httpx - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-08-15 18:11:16,844 - httpx - DEBUG - load_verify_locations cafile='/usr/local/lib/python3.9/site-packages/certifi/cacert.pem'
+2024-08-15 18:11:16,859 - httpcore.connection - DEBUG - connect_tcp.started host='data_api' port=8000 local_address=None timeout=5.0 socket_options=None
+2024-08-15 18:11:16,861 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7ff0302cfd00>
+2024-08-15 18:11:16,861 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-08-15 18:11:16,862 - httpcore.http11 - DEBUG - send_request_headers.complete
+2024-08-15 18:11:16,862 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-08-15 18:11:16,862 - httpcore.http11 - DEBUG - send_request_body.complete
+2024-08-15 18:11:16,862 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-08-15 18:11:16,865 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Thu, 15 Aug 2024 18:11:16 GMT'), (b'server', b'uvicorn'), (b'content-length', b'67'), (b'content-type', b'application/json')])
+2024-08-15 18:11:16,865 - httpx - INFO - HTTP Request: GET http://data_api:8000/categories "HTTP/1.1 200 OK"
+2024-08-15 18:11:16,865 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-08-15 18:11:16,865 - httpcore.http11 - DEBUG - receive_response_body.complete
+2024-08-15 18:11:16,865 - httpcore.http11 - DEBUG - response_closed.started
+2024-08-15 18:11:16,865 - httpcore.http11 - DEBUG - response_closed.complete
+2024-08-15 18:11:16,866 - httpcore.connection - DEBUG - close.started
+2024-08-15 18:11:16,866 - httpcore.connection - DEBUG - close.complete
+2024-08-15 20:55:57,260 - user_api - DEBUG - Logging is configured and directory exists.
+2024-08-15 21:17:51,858 - user_api - DEBUG - Logging is configured and directory exists.
+2024-08-15 21:21:23,671 - user_api - DEBUG - Logging is configured and directory exists.
+2024-08-15 21:25:58,431 - user_api - DEBUG - Logging is configured and directory exists.

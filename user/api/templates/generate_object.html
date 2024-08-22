@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="/static/materialize/MaterialIcons-Regular.woff" rel="stylesheet"/>
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="/static/materialize/materialize.css" />
+    <!--Let browser know website is optimized for mobile-->
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generation</title>
+  </head>
+  <body>
+    <nav id="npair-nav">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">Get your 3D Object</a>
+      </div>
+    </nav>
+
+    <div class="section" id="page-background">
+      <div class="container">
+        <span id="text-color">
+          <h4>Source Image ------------------> AI Model ------------------> Generated 3D Object</h4>
+        </span>
+        <div class="progress">
+          <div class="indeterminate"></div>
+      </div>   
+    </div>   
+
+    <div class="row" id="captures">
+      <div class="col s5 offset-s4">
+        <div id="image-container">
+          <img id="render" src="/static/images/blue_measures_bw.gif" alt="rendered image of the generated object">        
+        </div>
+      </div>
+    </div>
+    
+    <div class="container" id="btn-row">
+      <div class="row">
+        <div class="col s3 offset-s0">
+          <button class="btn-large waves-effect waves-light" id="buttons" onclick="window.location.href = '/'">Choose a new category</button>
+        </div>
+        <div class="col s3 offset-s1">
+          <button class="btn-large waves-effect waves-light" id="buttons" onclick="window.location.href = '/enhance'">Enhance your 3D object</button>
+        </div>
+        <div class="col s3 offset-s1">
+          <button class="btn-large waves-effect waves-light" id="download_button" disabled>Download your file</button>
+        </div>
+      </div>  
+    </div>
+
+    <footer class="page-footer id="page-background">      
+      <div class="row">
+        <div class="col s4">
+          <div class="image-wrapper">
+            <img class="responsive-img" src="/static/images/npair_logo.jpg" alt="Logo du NPAIR.">
+          </div>
+        </div>
+        <div class="col s6">
+          <span id="text-color">
+            <h4>AI for NPR: Artificial Intelligence meets your non-photorealistic needs</h4>                
+          </span>
+        </div>
+      </div>      
+    </footer>
+    <style>
+      html, body {
+        height: 100%;
+      }
+      #npair-nav {
+      background-color: #393939 !important;
+      }
+      #captures {
+        margin-top: 50px;  /* Adds 10px of space below each row */
+      }
+      #btn-row {
+        margin-top: 50px;  /* Adds 10px of space below each row */        
+      }
+      /* #buttons {
+        color:#424242;
+        background-color: #76b72a
+      }
+ */      #page-background {
+      background-color: #424242 !important;
+      }
+      #text-color {
+      color: #bdbdbd !important;
+      }
+      #image-container {
+      width: 680px;
+      height: 520px; 
+      border: 20px double #212121; 
+      }
+      .image-wrapper {
+      /* Set desired dimensions for the wrapper */
+      width: 150px;  
+      max-height: 70px;
+      /* Optional: Center the image within the wrapper if needed */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+      .page-footer {
+      position: fixed;  /* Fix footer to bottom */
+      bottom: 0;
+      left: 0;
+      width: 100%; /* Span entire width */
+      /* Set background color using your ID selector */
+      /*padding: 1rem; /* Add padding for content */
+      }
+    </style> 
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="/static/jquery-3.7.1.min.js"></script>
+    <script src="/static/materialize/materialize.js"></script>
+    <script src="/static/materialize/init.js"></script>
+    <script>
+      var ws = new WebSocket("ws://localhost:8002/ws");
+      var objectUrl = null;
+      // Handle incoming messages
+      ws.onmessage = function(event) {
+          var data = JSON.parse(event.data);
+
+          if (data.render) {
+              // Update the image
+              var imageSrc = "data:image/jpeg;base64," + data.render;
+              document.getElementById("render").src = imageSrc;
+          }
+          
+          if (data.object_path) {
+              // Enable download button and set up download functionality
+              var downloadButton = document.getElementById("download_button");
+              downloadButton.disabled = false;
+              objectUrl = data.object_path;
+              
+              downloadButton.onclick = function() {
+                  // Use the object_path to construct a download URL
+                  var downloadUrl = '/download?file=' + encodeURIComponent(objectUrl);
+                  
+                  var link = document.createElement('a');
+                  link.href = downloadUrl;
+                  link.download = '3d_object.glb';  // Changed to .glb based on the file path
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+              };
+          }
+      };
+
+      // Handle WebSocket errors
+      ws.onerror = function(event) {
+          console.error("WebSocket error observed:", event);
+      };
+
+      // Handle WebSocket closure
+      ws.onclose = function(event) {
+          console.log("WebSocket is closed now.");
+      };
+    </script>
+  </body>
+</html>
