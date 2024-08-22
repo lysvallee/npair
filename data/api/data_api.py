@@ -1,11 +1,14 @@
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException, Depends, Request
 from sqlmodel import Session, select, col
 from typing import List
 from datetime import datetime
 from models import Image, Usage
 from services import get_db, create_db_and_tables
 import os
+import time
 import logging
+from models import ServiceMetrics
+from datetime import datetime
 
 IMAGES_DIR = "/data/storage/images"
 
@@ -24,17 +27,54 @@ logger = logging.getLogger(__name__)
 app = FastAPI()
 
 
+# Log the metrics that will be sent to Grafana via the postgreSQL database
+def log_response_time(
+    db: Session,
+    service_name: str,
+    endpoint: str,
+    response_time: float,
+    status_code: int,
+):
+    new_metric = ServiceMetrics(
+        service_name=service_name,
+        endpoint=endpoint,
+        response_time=response_time,
+        status_code=status_code,
+        timestamp=datetime.utcnow(),
+    )
+    db.add(new_metric)
+    db.commit()
+    db.refresh(new_metric)
+    return new_metric
+
+
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    start_time = time.time()
+    response = await call_next(request)
+    response_time = (time.time() - start_time) * 1000  # Convert to milliseconds
+
+    # Use a new database session for logging
+    db = next(get_db())
+    try:
+        log_response_time(
+            db=db,
+            service_name="model_api",
+            endpoint=request.url.path,
+            response_time=response_time,
+            status_code=response.status_code,
+        )
+    finally:
+        db.close()  # Ensure the database session is closed
+
+    return response
+
+
 # Use a callback to trigger the creation of tables if they don't exist yet
 @app.on_event("startup")
 def on_startup():
-    #    create_db_and_tables()
+    create_db_and_tables()
     logger.debug("Creating database tables...")
-
-
-# @app.get("/images")
-# def get_images(db: Session = Depends(get_db)):
-#     images = db.exec(select(Image)).all()
-#     return [{"id": img.image_id, "image_name": img.image_name, "image_category": img.image_category} for img in images]
 
 
 @app.get("/categories")

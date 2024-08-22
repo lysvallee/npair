@@ -64,9 +64,10 @@ class Usage(SQLModel, table=True):
 
 
 class ServiceMetrics(SQLModel, table=True):
-    id: int = Field(primary_key=True)
+    __tablename__ = "service_metrics"
+    id: int = Field(default=None, primary_key=True)
     service_name: str
     endpoint: str
-    response_time_ms: float
+    response_time: float
     status_code: int
-    timestamp: datetime
+    timestamp: datetime = Field(default_factory=datetime.utcnow)
