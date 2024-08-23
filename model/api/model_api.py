@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from sqlmodel import SQLModel, Field
 import os
 import shutil
@@ -16,7 +16,7 @@ os.makedirs("/app/logs", exist_ok=True)
 
 # Setup logging
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     filename="/app/logs/model_api.log",
 )
@@ -74,6 +74,8 @@ RENDERS_DIR = "/data/storage/renders"
 
 @app.post("/generate")
 async def generate_3d_model(model_parameters: dict):
+    chunk_size = "8192"
+    mc_resolution = "256"
     image_path = model_parameters["image_path"]
     logger.debug(f"Image path received by the model: {image_path}")
     if not os.path.exists(image_path):
@@ -88,6 +90,10 @@ async def generate_3d_model(model_parameters: dict):
                 "--model-save-format",
                 "glb",
                 "--render",
+                "--chunk-size",
+                chunk_size,
+                "--mc-resolution",
+                mc_resolution,
                 "--output-dir",
                 OBJECTS_DIR,
             ],

@@ -6,9 +6,6 @@ services:
       - "8000:8000"
     environment:
       - NPAIR_DB_URL=postgresql://admin:3Dgen_gltf@db/npair_db
-      - CASSANDRA_HOST=cassandra
-      - CASSANDRA_PORT=9042
-      - CASSANDRA_KEYSPACE=tmdb      
     volumes:
       - ./data/storage:/data/storage
       - ./data/api/pip_cache:/root/.cache/pip
@@ -29,18 +26,6 @@ services:
     depends_on:
       - data_api
     runtime: nvidia # Enables GPU access
-
-  user_api:
-    build: ./user/api
-    ports:
-      - "8002:8002"
-    volumes:
-      - ./data/storage:/data/storage
-      - ./user/api/pip_cache:/root/.cache/pip
-      - ./logs:/app/logs
-    depends_on:
-      - data_api
-      - model_api
 
   db:
     image: postgres:14
