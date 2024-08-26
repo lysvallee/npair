@@ -57,50 +57,6 @@ logger.debug("Logging is configured and directory exists.")
 
 app = FastAPI()
 
-
-# Log the metrics that will be sent to Grafana via the postgreSQL database
-def log_response_time(
-    db: Session,
-    service_name: str,
-    endpoint: str,
-    response_time: float,
-    status_code: int,
-):
-    new_metric = ServiceMetrics(
-        service_name=service_name,
-        endpoint=endpoint,
-        response_time=response_time,
-        status_code=status_code,
-        timestamp=datetime.utcnow(),
-    )
-    db.add(new_metric)
-    db.commit()
-    db.refresh(new_metric)
-    return new_metric
-
-
-@app.middleware("http")
-async def log_requests(request: Request, call_next):
-    start_time = time.time()
-    response = await call_next(request)
-    response_time = (time.time() - start_time) * 1000  # Convert to milliseconds
-
-    # Use a new database session for logging
-    db = next(get_db())
-    try:
-        log_response_time(
-            db=db,
-            service_name="model_api",
-            endpoint=request.url.path,
-            response_time=response_time,
-            status_code=response.status_code,
-        )
-    finally:
-        db.close()  # Ensure the database session is closed
-
-    return response
-
-
 templates = Jinja2Templates(directory="templates")
 
 # Get the current directory
@@ -268,3 +224,46 @@ async def download_file(file: str):
         raise HTTPException(status_code=404, detail="File not found")
     logger.debug(f"File to download: {file}")
     return FileResponse(file, filename=os.path.basename(file))
+
+
+# Log the metrics that will be sent to Grafana via the postgreSQL database
+def log_response_time(
+    db: Session,
+    service_name: str,
+    endpoint: str,
+    response_time: float,
+    status_code: int,
+):
+    new_metric = ServiceMetrics(
+        service_name=service_name,
+        endpoint=endpoint,
+        response_time=response_time,
+        status_code=status_code,
+        timestamp=datetime.utcnow(),
+    )
+    db.add(new_metric)
+    db.commit()
+    db.refresh(new_metric)
+    return new_metric
+
+
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    start_time = time.time()
+    response = await call_next(request)
+    response_time = (time.time() - start_time) * 1000  # Convert to milliseconds
+
+    # Use a new database session for logging
+    db = next(get_db())
+    try:
+        log_response_time(
+            db=db,
+            service_name="model_api",
+            endpoint=request.url.path,
+            response_time=response_time,
+            status_code=response.status_code,
+        )
+    finally:
+        db.close()  # Ensure the database session is closed
+
+    return response
