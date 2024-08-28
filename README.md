@@ -27,30 +27,29 @@ git clone https://github.com/lysvallee/npair.git
 ```
 
 
-
-**3. Build Docker Images (Optional):**
+**2. Build Docker Images (Optional):**
 
 You can build the Docker images for each component manually:
 
 ```bash
-cd data/
+cd data/api
 docker build -t data_api .
 
-cd ../model/
+cd ../model/api
 docker build -t model_api .
 
 # ... Repeat for other services (user_api, tests, etc.)
 ```
 
-**4. Run the Application (Development or Production Mode):**
+**3. Run the Application (Development or Production Mode):**
 
-Navigate to the project directory:
+Navigate to the root directory:
 
 ```bash
 cd npair
 ```
 
-Use Docker Compose to build the images and start the application in your desired mode:
+Use Docker Compose to build the images (if necessary) and start the application in your desired mode:
 
 ```bash
 docker-compose -f docker-compose-monitoring.yml up --build
@@ -65,13 +64,13 @@ This will build the required images and bring up the concerned services. You can
 * Model API: http://localhost:8001
 * User API: http://localhost:8002
 
-**5. Run Tests:**
+**4. Run Tests:**
 
 ```bash
 docker-compose run --rm tests pytest
 ```
 
-**6. Production Deployment:**
+**5. Production Deployment:**
 
 Refer to the `docker-compose-prod.yml` file for configuration details specific to a production environment.
 
