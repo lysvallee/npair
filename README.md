@@ -6,11 +6,11 @@ This project provides a web application for generating 3D objects from input ima
 
 The application consists of three main components:
 
-1. **Data API (data_api):** Serves images and tabular data (color palettes, PBR materials) from a PostgreSQL database.
+1. **Data API (data_api):** Serves images and tabular data (color palettes, PBR materials) from Apache Cassandra and PostgreSQL databases.
 2. **Model API (model_api):** Runs the TripoSR model to generate 3D objects from images received through the API.
-3. **User API (user_api):** Receives user input (image data), interacts with the data and model APIs, and provides the generated 3D object to the frontend.
+3. **User API (user_api):** Receives user input, interacts with the data and model APIs, and provides the generated 3D object to the frontend.
 
-The application can be deployed in production and testing environments using Docker Compose. Monitoring for the user API is also integrated with Prometheus and Grafana.
+The application can be deployed in production and testing environments using Docker Compose. Monitoring for the user API is also integrated with Grafana.
 
 ### Setting Up the Project
 
@@ -23,17 +23,10 @@ The application can be deployed in production and testing environments using Doc
 **1. Clone the Repository:**
 
 ```bash
-git clone https://your-repository-url.git
+git clone https://github.com/lysvallee/npair.git
 ```
 
-**2. Install Dependencies:**
 
-Navigate to the project directory and install dependencies using pip:
-
-```bash
-cd 3d-generation-app
-pip install -r requirements.txt
-```
 
 **3. Build Docker Images (Optional):**
 
@@ -49,19 +42,28 @@ docker build -t model_api .
 # ... Repeat for other services (user_api, tests, etc.)
 ```
 
-**4. Run the Application (Development Mode):**
+**4. Run the Application (Development or Production Mode):**
 
-Use Docker Compose to start the application in development mode:
+Navigate to the project directory:
 
 ```bash
-docker-compose up -d
+cd npair
 ```
 
-This will bring up all services in detached mode. You can access the APIs at the following default ports:
+Use Docker Compose to build the images and start the application in your desired mode:
 
-* Data API: http://localhost:8000 (modify port if needed in docker-compose.yml)
-* Model API: http://localhost:8001 (modify port if needed in docker-compose.yml)
-* User API: http://localhost:8002 (modify port if needed in docker-compose.yml)
+```bash
+docker-compose -f docker-compose-monitoring.yml up --build
+or
+docker-compose -f docker-compose-tracking.yml up --build
+
+```
+
+This will build the required images and bring up the concerned services. You can access the APIs at the following default ports:
+
+* Data API: http://localhost:8000 (modify port if needed in the Docker Compose yml)
+* Model API: http://localhost:8001
+* User API: http://localhost:8002
 
 **5. Run Tests:**
 
@@ -87,52 +89,90 @@ The Model API takes an image as input and generates a 3D object using the TripoS
 
 The User API serves as the primary entry point for users. It interacts with the Data and Model APIs to provide a combined functionality:
 
-* Users can send an image through a POST request to a specific endpoint.
-* The User API retrieves additional data (color palettes, materials) from the Data API.
-* It then calls the Model API with the image and retrieved data.
-* Finally, the User API receives the generated 3D object and returns it to the user.
+* Users can choose an image through a POST request to a specific endpoint.
+* The service then calls the Model API with the image path and receives the generated 3D object.
+* It retrieves additional data (color palettes, materials) from the Data API that allow further enhancement.
+* It returns the final 3D object to the user.
 
-Refer to `user/api/user_api.py` for specific endpoint details and usage instructions.
+Please refer to `user/api/user_api.py` for specific endpoint details and usage instructions.
 
 **Note:** This is a general overview. Specific API endpoints, request/response formats, and authentication mechanisms might require further exploration within the relevant API code files.
 
 ### Monitoring
 
-The user API is integrated with Prometheus and Grafana for monitoring. Refer to the `user/monitoring` folder for configuration details.
+The user API is integrated with Grafana for monitoring. Please refer to the `user/monitoring` folder for configuration details.
 
 
 Full file structure:
 
 ├── data
 │   ├── api
+│   │   ├── clear_databases.py
+│   │   ├── data_aggregation.py
 │   │   ├── data_api.py
 │   │   ├── Dockerfile
+│   │   ├── extract_brand_palettes.py
+│   │   ├── extract_images.py
+│   │   ├── extract_materials.py
+│   │   ├── extract_movie_palettes.py
+│   │   ├── extract_show_palettes.py
+│   │   ├── initialize.sh
+│   │   ├── initial_setup.py
 │   │   ├── models.py
+│   │   ├── pip_cache
 │   │   ├── requirements.txt
 │   │   └── services.py
-│   ├── init
-│   │   ├── Dockerfile
-│   │   └── init.sql
 │   └── storage
-│       └── young_boy.png
+│       ├── cdb
+│       ├── db
+│       ├── images
+│       ├── materials
+│       ├── objects
+│       ├── palettes
+│       ├── renders
+│       └── tmp
+├── docker-compose-data-user.yml
+├── docker-compose-monitoring.yml
+├── docker-compose-poc.yml
+├── docker-compose-prod_add.yml
 ├── docker-compose-prod.yml
+├── docker-compose-shows.yml
 ├── docker-compose-test.yml
+├── docker-compose-tracking.yml
+├── grafana
+│   ├── data
+│   │   ├── csv
+│   │   ├── grafana.db
+│   │   ├── pdf
+│   │   ├── plugins
+│   │   └── png
+│   └── provisioning
+├── logs
+│   ├── clear_databases.log
+│   ├── create_movies_db.log
+│   ├── create_shows_db.log
+│   ├── data_api.log
+│   ├── extract_movie_palettes.log
+│   ├── model_api.log
+│   ├── user_api.log
 ├── model
 │   ├── api
 │   │   ├── Dockerfile
 │   │   ├── model_api.py
-│   │   └── requirements.txt
+│   │   ├── models.py
+│   │   ├── pip_cache
+│   │   ├── requirements.txt
+│   │   ├── services.py
+│   │   ├── td.org
+│   │   └── triposr
+│   ├── huggingface
+│   │   └── hub
 │   ├── tracking
 │   │   ├── Dockerfile
+│   │   ├── pip_cache
 │   │   └── requirements.txt
-│   └── triposr
-│       ├── examples
-│       ├── figures
-│       ├── gradio_app.py
-│       ├── LICENSE
-│       ├── README.md
-│       ├── run.py
-│       └── tsr
+│   └── u2net
+│       └── u2net.onnx
 ├── README.md
 ├── tests
 │   ├── Dockerfile
@@ -140,16 +180,17 @@ Full file structure:
 │   ├── test_data_api.py
 │   ├── test_model.py
 │   └── test_user_api.py
+├── tracking
+│   └── api
+│       └── pip_cache
 └── user
-    ├── api
-    │   ├── Dockerfile
-    │   ├── favicon.ico
-    │   ├── requirements.txt
-    │   ├── services.py
-    │   ├── static
-    │   ├── td.py
-    │   ├── templates
-    │   └── user_api.py
-    └── monitoring
-        ├── grafana
-        └── prometeus
+    └── api
+        ├── Dockerfile
+        ├── favicon.ico
+        ├── models.py
+        ├── pip_cache
+        ├── requirements.txt
+        ├── services.py
+        ├── static
+        ├── templates
+        └── user_api.py
