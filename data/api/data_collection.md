@@ -231,5 +231,3 @@ Each individual extraction module (`extract_*.py`) is responsible for its own da
 - **Logging**: Detailed logging is implemented in each module, facilitating debugging and monitoring of the aggregation and import process.
 
 These practices ensure that data from multiple sources and in various formats is safely aggregated and imported into our final database.
-
-
