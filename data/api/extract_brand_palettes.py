@@ -22,19 +22,35 @@ csv_file = "/data/storage/palettes/brand_palettes.csv"
 
 
 def insert_data(data):
-    """Insert a single data entry into the database."""
+    """
+    Insert data into the database.
+    Use a session to ensure data integrity and proper transaction handling.
+    """
     with Session(engine) as session:
         session.add(data)
         session.commit()
 
 
 def extract_english_characters(brand_name):
+    """
+    Extracts English characters, numbers, and hyphens from a given brand name.
+
+    Args:
+        brand_name (str): The original brand name.
+
+    Returns:
+        str: A string containing only English characters, numbers, and hyphens.
+    """
     # Use regular expression to match English characters (a-zA-Z), numbers (0-9), and the '-' character
     characters = re.findall(r"[a-zA-Z0-9-]", brand_name)
     return "".join(characters)
 
 
 def insert_brands():
+    """
+    Reads brand data from a CSV file and inserts it into the database.
+    Implements retry logic for database insertion and error handling.
+    """
     max_retries = 20
     retry_interval = 40
 
@@ -52,7 +68,7 @@ def insert_brands():
                     # Extract English characters from brand_name
                     brand_name = extract_english_characters(row["brand_name"])
 
-                    # Check if brand_name is not empty
+                    # Check if brand_name is not empty after extraction
                     if brand_name:
                         # Create a Brand instance for the row
                         brand = Brand(

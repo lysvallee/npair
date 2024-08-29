@@ -27,27 +27,55 @@ create_db_and_tables()
 
 
 def insert_data(data):
+    """
+    Insert data into the database.
+    Uses a session to ensure data integrity and proper transaction handling.
+    """
     with Session(engine) as session:
         session.add(data)
         session.commit()
 
 
 def get_color_palette(poster_path):
+    """
+    This function retrieves a color palette from a movie poster image URL.
+
+    Args:
+        poster_path (str): The path to the movie poster image on TMDB.
+
+    Returns:
+        str (JSON): A JSON-formatted string representing the color palette as a list.
+            - On success: Contains a list of 5 RGB color values (e.g., [ [255, 0, 0], ... ]).
+            - On error: Returns an empty JSON list ( `[]` ).
+    """
+
     logger.debug(f"Attempting to generate color palette for {poster_path}")
+
     try:
+        # Construct the full image URL based on TMDB's poster path format
         image_url = f"https://image.tmdb.org/t/p/w500{poster_path}"
+
+        # Download the image content as a byte stream
         response = requests.get(image_url)
         img = BytesIO(response.content)
+
+        # Use ColorThief library to extract a 5-color palette from the image
         color_thief = ColorThief(img)
         palette = color_thief.get_palette(color_count=5)
+
         logger.info(f"Successfully generated palette for {image_url}")
-        return json.dumps(palette)
+        return json.dumps(palette)  # Return the palette as JSON
+
     except Exception as e:
         logger.error(f"Error generating palette for {image_url}: {str(e)}")
-        return json.dumps([])  # Return empty JSON list on error
+        return json.dumps([])  # Return empty JSON list on any exception
 
 
 def insert_movies():
+    """
+    Retrieves movie data from Cassandra database and inserts color palettes into PostgreSQL.
+    Implements retry logic for Cassandra connection and error handling for each movie.
+    """
     logger.debug("Attempting to retrieve movies from Cassandra")
     cassandra_host = os.environ.get("CASSANDRA_HOST", "cassandra")
 
@@ -56,6 +84,7 @@ def insert_movies():
 
     for attempt in range(max_retries):
         try:
+            # Attempt to connect to Cassandra with retry logic
             logger.info(f"Attempt {attempt + 1} to connect to Cassandra")
             cluster = Cluster(
                 ["cassandra"],
@@ -64,25 +93,20 @@ def insert_movies():
             )
             session = cluster.connect()
 
-            # Connect to Cassandra
-            cluster = Cluster([cassandra_host])
-            session = cluster.connect()
-
-            # Use the tmdb keyspace
+            # Set keyspace for the session
             session.set_keyspace("tmdb")
 
-            # Retrieve movies
+            # Execute query to retrieve all movies
             rows = session.execute("SELECT title, poster_path FROM movies")
 
-            # Convert the ResultSet to a list to allow len() and indexing
+            # Convert ResultSet to list for easier manipulation
             movies = list(rows)
 
             logger.info(f"Retrieved {len(movies)} movies from Cassandra")
 
-            # Insert movie palettes into the database
+            # Process each movie and insert palette into PostgreSQL
             for movie in movies:
                 try:
-                    # Access tuple elements by index instead of string keys
                     title = movie[0]
                     poster_path = movie[1]
 
@@ -98,6 +122,7 @@ def insert_movies():
             logger.info(f"Retrying in {retry_interval} seconds...")
             time.sleep(retry_interval)
         finally:
+            # Ensure cluster connection is closed
             if "cluster" in locals():
                 cluster.shutdown()
         return []

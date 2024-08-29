@@ -21,8 +21,15 @@ engine = create_engine(NPAIR_DB_URL)
 SQLModel.metadata.create_all(engine)
 
 
-# Function to add a row of material data to the database
 def add_row(material_name, roughness, metalness):
+    """
+    Adds a single row of material data to the database.
+
+    Args:
+        material_name (str): The name of the material.
+        roughness (float): The roughness value of the material.
+        metalness (float): The metalness value of the material.
+    """
     try:
         with Session(engine) as session:
             material = Material(
@@ -42,6 +49,9 @@ html_file = "/data/storage/materials/Material References Documentation - Roblox 
 
 
 def insert_materials():
+    """
+    Parses an HTML file containing material information and inserts the data into the database.
+    """
     try:
         # Open and parse the HTML file
         with open(html_file, "r", encoding="utf-8") as file:
@@ -49,7 +59,7 @@ def insert_materials():
 
         soup = BeautifulSoup(html_content, "html.parser")
 
-        # Find all material sections
+        # Find all material sections in the HTML
         material_sections = soup.find_all(
             "div",
             class_="MuiGrid-root web-blox-css-tss-spvy06-Grid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-lg-3 web-blox-css-mui-1y5f5z7",
@@ -67,10 +77,10 @@ def insert_materials():
                 for info_line in info_lines:
                     key, value = info_line.split(": ")
                     if "-" in value:
-                        value_low = float(value.split("-")[0])
-                        value_high = float(value.split("-")[1])
+                        # If value is a range, take the average
+                        value_low, value_high = map(float, value.split("-"))
                         value = mean([value_low, value_high])
-                    material_info[key] = round(float(value), 2)
+                        material_info[key] = round(float(value), 2)
 
                 roughness = material_info.get("Roughness")
                 metalness = material_info.get("Metalness")

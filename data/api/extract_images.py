@@ -25,6 +25,10 @@ create_db_and_tables()
 
 
 def insert_data(data):
+    """
+    Insert data into the database.
+    Use a session to ensure data integrity and proper transaction handling.
+    """
     with Session(engine) as session:
         session.add(data)
         session.commit()
@@ -32,9 +36,9 @@ def insert_data(data):
 
 def check_image_borders(image, image_category, p, s):
     """
-    Checks the alpha values of the border pixels.
-    Discards the image if any border pixel has an alpha value different than 0.
-    Returns the image if it passes the check.
+    Check the alpha values of the border pixels.
+    Discard the image if any border pixel has an alpha value different than 0.
+    Return the image if it passes the check.
     """
     # Ensure the image has an alpha channel
     if image.mode != "RGBA":
@@ -86,6 +90,12 @@ def check_image_borders(image, image_category, p, s):
 
 
 def insert_images():
+    """
+    Main function to fetch and insert images from Pixabay API.
+    Implements filtering by category, color (transparent), and tags.
+    Optimizes API usage by limiting requests to 50 images per page.
+    """
+    # API key and query parameters
     key = "9831243-d1ff87804d4b3508285497c61"
     editors_choice = "false"
     colors = "transparent"
@@ -99,17 +109,19 @@ def insert_images():
     ]
 
     for image_category in queries:
+        # Create directory for each category
         os.makedirs(f"/data/storage/images/{image_category}", exist_ok=True)
-        for p in range(1, 2):
+        for p in range(1, 3):
             try:
-                page_url = f"https://pixabay.com/api/?key={key}&category={pixabay_category}&q={image_category}&safesearch=true&page={p}&per_page=10&editors_choice={editors_choice}&colors={colors}&image_type=photo"
+                # Construct API URL with query parameters
+                page_url = f"https://pixabay.com/api/?key={key}&category={pixabay_category}&q={image_category}&safesearch=true&page={p}&per_page=50&editors_choice={editors_choice}&colors={colors}&image_type=photo"
                 rp = requests.get(page_url)
                 rp.raise_for_status()  # Raise an error for bad HTTP status codes
 
                 if "hits" in rp.json():
                     sources = rp.json()["hits"]
                     for s, source in enumerate(sources):
-                        # Check that the collected image corresponds to the shot of an object belonging to the category
+                        # Filter images by checking tags
                         tags = source["tags"].replace(", ", "_")
                         if image_category in tags:
                             logging.info(
@@ -117,22 +129,22 @@ def insert_images():
                             )
 
                             try:
+                                # Download and process image
                                 im_url = source["webformatURL"]
                                 im_req = requests.get(im_url)
-                                im_req.raise_for_status()  # Raise an error for bad HTTP status codes
+                                im_req.raise_for_status()
                                 image = PILImage.open(BytesIO(im_req.content))
 
-                                # Check that the image borders are clean
+                                # Check image borders for transparency
                                 result = check_image_borders(
                                     image, image_category, p, s
                                 )
                                 if result:
-                                    # Save the image
+                                    # Save image and insert data into database
                                     image_name = f'{image_category}/{s:06d}_{tags}{os.path.splitext(source["webformatURL"])[1]}'
                                     image_path = f"/data/storage/images/{image_name}"
                                     image.save(image_path)
 
-                                    # Insert image data into the database
                                     image_data = Image(
                                         image_name=image_name,
                                         image_category=image_category,

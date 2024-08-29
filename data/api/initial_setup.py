@@ -1,28 +1,26 @@
+# Import functions from individual extraction scripts
 from extract_images import insert_images
 from extract_movie_palettes import insert_movies
 from extract_show_palettes import insert_shows
 from extract_brand_palettes import insert_brands
 from extract_materials import insert_materials
-from clear_databases import clear_postgresql_db, clear_cassandra_db
 
 if __name__ == "__main__":
-    # Clear previous definitions
-    #    clear_postgresql_db()
-    #    clear_cassandra_db()
+    # Data Aggregation and Import Process
 
-    # Extract images from querying the Pixabay API
+    # Step 1: Extract and import images from Pixabay API
     insert_images()
 
-    # Extract movie palettes from the Cassandra database
-    # insert_movies()
+    # Step 2: Extract movie palettes from Cassandra database and import
+    insert_movies()
 
-    # Extract show palettes from the postgresSQL database
-    # insert_shows()
+    # Step 3: Extract show palettes from PostgreSQL database and import
+    insert_shows()
 
-    # Extract brand palettes from the CSV fle
-    # insert_brands()
+    # Step 4: Extract brand palettes from CSV file and import
+    insert_brands()
 
-    # Extract materials from parsing the html file
-    # insert_materials()
+    # Step 5: Extract material properties from HTML file and import
+    insert_materials()
 
-    print("Initial setup complete.")
+    print("Initial setup complete: Data aggregation and import finished.")
