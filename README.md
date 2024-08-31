@@ -104,6 +104,7 @@ The user API is integrated with Grafana for monitoring. Please refer to the `use
 
 Full file structure:
 
+```
 ├── data
 │   ├── api
 │   │   ├── clear_databases.py
@@ -193,3 +194,4 @@ Full file structure:
         ├── static
         ├── templates
         └── user_api.py
+```

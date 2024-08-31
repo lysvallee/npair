@@ -27,28 +27,15 @@ logger = logging.getLogger(__name__)
 
 # Initialize FastAPI and Basic Auth
 app = FastAPI()
-security = HTTPBasic()
 
-# A collection of usernames that should delight Simplon and their obsession with pipes;)
-users_db = {
-    "PaulPlombier": {"username": "PaulPlombier", "password": "PlomberieSimplon_03"},
-    "RobertRobinet": {"username": "RobertRobinet", "password": "PlomberieSimplon_88"},
-    "JacquesJoint": {"username": "JacquesJoint", "password": "PlomberieSimplon_48"},
-    "ClaudineCanal": {"username": "ClaudineCanal", "password": "PlomberieSimplon_01"},
-    "TiphaineTuyau": {"username": "TiphaineTuyau", "password": "PlomberieSimplon_63"},
-}
+API_KEY = os.getenv("API_KEY")
 
 
-def authenticate(credentials: HTTPBasicCredentials = Depends(security)):
-    # Check if the user exists
-    user = users_db.get(credentials.username)
-    if not user or not secrets.compare_digest(user["password"], credentials.password):
-        raise HTTPException(
-            status_code=401,
-            detail="Incorrect username or password",
-            headers={"WWW-Authenticate": "Basic"},
-        )
-    return credentials.username
+@app.middleware("http")
+async def validate_api_key(request: Request, call_next):
+    if request.headers.get("Authorization") != f"Bearer {API_KEY}":
+        raise HTTPException(status_code=403, detail="Invalid API key")
+    return await call_next(request)
 
 
 # Use a callback to trigger the creation of tables if they don't exist yet
@@ -59,18 +46,14 @@ def on_startup():
 
 
 @app.get("/categories")
-def get_categories(
-    db: Session = Depends(get_db), username: str = Depends(authenticate)
-):
+def get_categories(db: Session = Depends(get_db)):
     categories = db.query(Image.image_category).distinct().all()
     logger.debug(f"Categories: {categories}")
     return [category[0] for category in categories]
 
 
 @app.post("/usages")
-def create_usage(
-    usage: dict, db: Session = Depends(get_db), username: str = Depends(authenticate)
-):
+def create_usage(usage: dict, db: Session = Depends(get_db)):
     new_usage = Usage(
         selection_time=usage["selection_time"],
         selected_category=usage["selected_category"],
@@ -83,9 +66,7 @@ def create_usage(
 
 
 @app.get("/usages/latest")
-def get_latest_usage(
-    db: Session = Depends(get_db), username: str = Depends(authenticate)
-):
+def get_latest_usage(db: Session = Depends(get_db)):
     latest_usage = db.exec(
         select(Usage).order_by(col(Usage.selection_time).desc())
     ).first()
@@ -96,11 +77,7 @@ def get_latest_usage(
 
 
 @app.put("/usages/latest")
-def update_latest_usage(
-    update_data: dict,
-    db: Session = Depends(get_db),
-    username: str = Depends(authenticate),
-):
+def update_latest_usage(update_data: dict, db: Session = Depends(get_db)):
     latest_usage = db.exec(
         select(Usage).order_by(col(Usage.selection_time).desc())
     ).first()
@@ -116,11 +93,7 @@ def update_latest_usage(
 
 @app.get("/images/{category}")
 def get_images_by_category(
-    category: str,
-    page: int = 1,
-    page_size: int = 21,
-    db: Session = Depends(get_db),
-    username: str = Depends(authenticate),
+    category: str, page: int = 1, page_size: int = 21, db: Session = Depends(get_db)
 ):
     try:
         logger.debug(

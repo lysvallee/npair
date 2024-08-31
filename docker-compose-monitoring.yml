@@ -6,7 +6,7 @@ services:
       - "8000:8000"
     environment:
       - NPAIR_DB_URL=postgresql://admin:3Dgen_gltf@db/npair_db
-      - API_KEY="9831243-d1ff87804d4b3508285497c61"
+      - API_KEY=9831243-d1ff87804d4b3508285497c61
     volumes:
       - ./data/storage:/data/storage
       - ./data/api/pip_cache:/root/.cache/pip
@@ -15,12 +15,15 @@ services:
       - db
 
   model_api:
-    build: ./model/api
+    build:
+      context: ./model/api
+      dockerfile: Dockerfile.gpu
+    image: npair_model_api:gpu
     ports:
       - "8001:8001"
     environment:
       - NPAIR_DB_URL=postgresql://admin:3Dgen_gltf@db/npair_db
-      - API_KEY="9831243-d1ff87804d4b3508285497c61"      
+      - API_KEY=9831243-d1ff87804d4b3508285497c61
     volumes:
       - ./data/storage:/data/storage
       - ./model/api/pip_cache:/root/.cache/pip
