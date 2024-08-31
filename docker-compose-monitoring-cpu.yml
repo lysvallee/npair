@@ -40,6 +40,7 @@ services:
       - "8002:8002"
     environment:
       - NPAIR_DB_URL=postgresql://admin:3Dgen_gltf@db/npair_db
+      - API_KEY=9831243-d1ff87804d4b3508285497c61      
     volumes:
       - ./data/storage:/data/storage
       - ./user/api/pip_cache:/root/.cache/pip

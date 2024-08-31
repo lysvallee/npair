@@ -74,6 +74,12 @@ app.mount("/data", StaticFiles(directory="/data"), name="data")
 
 DATA_API_URL = "http://data_api:8000"
 MODEL_API_URL = "http://model_api:8001"
+API_KEY = os.getenv("API_KEY")
+
+
+# Helper function to create headers with API key
+def get_api_headers():
+    return {"Authorization": f"Bearer {API_KEY}"}
 
 
 @app.get("/")
@@ -82,7 +88,9 @@ async def home(request: Request):
     Renders the home page template with the list of image categories.
     """
     async with httpx.AsyncClient() as client:
-        response = await client.get(f"{DATA_API_URL}/categories")
+        response = await client.get(
+            f"{DATA_API_URL}/categories", headers=get_api_headers()
+        )
         categories = response.json()
     return templates.TemplateResponse(
         "home.html", {"request": request, "categories": categories}
@@ -102,7 +110,6 @@ async def choose_category(request: Request, selected_category: str = Form(...)):
             status_code=422, detail="Please select at least one category."
         )
     selection_time = datetime.now().isoformat()
-    # Post to data API
     async with httpx.AsyncClient() as client:
         response = await client.post(
             f"{DATA_API_URL}/usages",
@@ -110,11 +117,12 @@ async def choose_category(request: Request, selected_category: str = Form(...)):
                 "selected_category": selected_category,
                 "selection_time": selection_time,
             },
+            headers=get_api_headers(),
         )
         if response.status_code != 200:
             raise HTTPException(status_code=500, detail="Failed to create usage")
-    logger.debug(f"Selection time: {selection_time}")
-    logger.debug(f"Selected category: {selected_category}")
+        logger.debug(f"Selection time: {selection_time}")
+        logger.debug(f"Selected category: {selected_category}")
     return RedirectResponse(url=f"/category/{selected_category}", status_code=303)
 
 
@@ -123,11 +131,12 @@ async def images(request: Request, category: str, page: int = 1):
     page_size = 21  # Number of images per page
     async with httpx.AsyncClient() as client:
         response = await client.get(
-            f"{DATA_API_URL}/images/{category}?page={page}&page_size={page_size}"
+            f"{DATA_API_URL}/images/{category}?page={page}&page_size={page_size}",
+            headers=get_api_headers(),
         )
         response.raise_for_status()
         image_paths = response.json()
-    logger.debug(f"image paths: {image_paths}")
+        logger.debug(f"image paths: {image_paths}")
     return templates.TemplateResponse(
         "images.html",
         {
@@ -144,7 +153,8 @@ async def load_more(category: str, page: int):
     page_size = 21
     async with httpx.AsyncClient() as client:
         response = await client.get(
-            f"{DATA_API_URL}/images/{category}?page={page}&page_size={page_size}"
+            f"{DATA_API_URL}/images/{category}?page={page}&page_size={page_size}",
+            headers=get_api_headers(),
         )
         image_paths = response.json()
     return {"images": image_paths}
@@ -164,6 +174,7 @@ async def choose_image(request: Request, selected_image_path: str = Form(...)):
         response = await client.put(
             f"{DATA_API_URL}/usages/latest",
             json={"selected_image_path": selected_image_path},
+            headers=get_api_headers(),
         )
         if response.status_code != 200:
             raise HTTPException(status_code=500, detail="Failed to update usage")
@@ -178,19 +189,21 @@ async def generate_object_page(request: Request):
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
-    async with httpx.AsyncClient(
-        timeout=httpx.Timeout(timeout=3600)
-    ) as client:  # 1 hour timeout
-        response = await client.get(f"{DATA_API_URL}/usages/latest")
+    # Set 1 hour timeout
+    async with httpx.AsyncClient(timeout=httpx.Timeout(timeout=3600)) as client:
+        response = await client.get(
+            f"{DATA_API_URL}/usages/latest", headers=get_api_headers()
+        )
         if response.status_code != 200:
             await websocket.close(code=1000, reason="Failed to get latest usage")
             return
         latest_usage = response.json()
         image_path = latest_usage.get("selected_image_path")
         logger.debug(f"3D image path: {image_path}")
-        # Post to model API
         response = await client.post(
-            f"{MODEL_API_URL}/generate", json={"image_path": image_path}
+            f"{MODEL_API_URL}/generate",
+            json={"image_path": image_path},
+            headers=get_api_headers(),
         )
         if response.status_code != 200:
             await websocket.close(code=1000, reason="Failed to generate model")
@@ -203,6 +216,7 @@ async def websocket_endpoint(websocket: WebSocket):
                 "object_3d": model_data["object_3d"],
                 "object_2d": model_data["object_2d"],
             },
+            headers=get_api_headers(),
         )
         if response.status_code != 200:
             await websocket.close(code=1000, reason="Failed to update usage")
