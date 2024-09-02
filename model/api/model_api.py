@@ -42,7 +42,11 @@ RENDERS_DIR = "/data/storage/renders"
 async def generate_3d_model(model_parameters: dict):
     chunk_size = "8192"
     mc_resolution = "256"
+    if "image_path" not in model_parameters:
+        raise HTTPException(status_code=422, detail="image_path is required")
     image_path = model_parameters["image_path"]
+    if not image_path:
+        raise HTTPException(status_code=422, detail="Image path cannot be empty")
     logger.debug(f"Image path received by the model: {image_path}")
     if not os.path.exists(image_path):
         raise HTTPException(status_code=404, detail="Image not found")
