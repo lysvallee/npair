@@ -49,11 +49,4 @@ jobs:
         file: ./data/api/Dockerfile
 
     - name: Run model API tests with API key
-      run: |
-        docker run --rm \
-          -e API_KEY=9831243-d1ff87804d4b3508285497c61 \
-          -v $(pwd)/model/api:/app \
-          -w /app \
-          --env PYTHONPATH=/app \
-          ghcr.io/${{ secrets.GHCR_USERNAME }}/npair_model_api:cpu \
-          pytest test_model_api.py
+      run: docker-compose -f docker-compose.prod.yml run --rm model_api pytest test_model_api.py
