@@ -12,7 +12,9 @@ headers = {"Authorization": f"Bearer {API_KEY}"}
 
 
 def test_generate_3d_model_success():
-    test_image_path = "/data/storage/test_data/000002_plane_cessna caravan_flying.png"
+    test_image_path = (
+        "/data/storage/images/plane/000002_plane_cessna caravan_flying.png"
+    )
     response = client.post(
         "/generate", json={"image_path": test_image_path}, headers=headers
     )
