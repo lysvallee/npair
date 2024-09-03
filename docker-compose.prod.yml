@@ -32,7 +32,6 @@ services:
       - ./model/u2net:/root/.u2net
     depends_on:
       - data_api
-    runtime: nvidia # Enables GPU access
 
   user_api:
     build: ./user/api
