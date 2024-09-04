@@ -22,6 +22,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+# TODO: ADD COMMENTS
 @pytest.fixture(scope="module")
 def test_image():
     logger.info("Setting up test_image fixture")
