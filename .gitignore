@@ -168,7 +168,7 @@ model/u2net/
 # Generated data
 # data/storage/objects
 # data/storage/renders
-# data/storage/images
+#data/storage/images
 
 # Other common exclusions
 *.swp
