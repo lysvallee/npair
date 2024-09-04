@@ -30,6 +30,9 @@ RUN pip install -r requirements.txt
 # Clear pip cache to reduce image size
 RUN pip cache purge
 
+# Copy the pytest configuration file
+COPY pytest.ini .
+
 # Copy the rest of the application code
 COPY . .
 

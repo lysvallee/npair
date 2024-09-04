@@ -17,4 +17,5 @@ uvicorn
 sqlmodel
 psycopg2-binary
 pytest
+pytest-asyncio
 httpx
