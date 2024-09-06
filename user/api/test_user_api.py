@@ -54,6 +54,13 @@ async def test_images(mock_httpx_client):
 
 
 @pytest.mark.asyncio
+async def test_generate_object_page(client):
+    response = client.get("/generate_object")
+    assert response.status_code == 200
+    assert "generate_object.html" in response.text
+
+
+@pytest.mark.asyncio
 async def test_api_key_usage(client, mock_httpx_client):
     mock_response = AsyncMock()
     mock_response.json.return_value = ["category1", "category2"]
