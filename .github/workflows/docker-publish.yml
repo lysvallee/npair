@@ -58,3 +58,6 @@ jobs:
 
     - name: Run model Unit tests with docker-compose
       run: docker-compose -f docker-compose.prod.yml run --rm model_api pytest --asyncio-mode=auto --log-cli-level=DEBUG unit_tests.py
+
+    - name: Run user tests with docker-compose
+      run: docker-compose -f docker-compose.prod.yml run --rm user_api pytest --asyncio-mode=auto --log-cli-level=DEBUG test_user_api.py

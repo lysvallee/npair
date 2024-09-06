@@ -5,3 +5,6 @@ sqlmodel
 httpx
 python-multipart
 psycopg2-binary
+pytest
+pytest-asyncio
+httpx
