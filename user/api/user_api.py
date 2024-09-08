@@ -77,6 +77,21 @@ MODEL_API_URL = "http://model_api:8001"
 API_KEY = os.getenv("API_KEY")
 
 
+# Handle Websocket connection issues
+async def send_with_retries(websocket, data, max_retries=15, retry_delay=3):
+    for attempt in range(max_retries):
+        try:
+            await websocket.send_text(data)
+            return  # If successful, exit the function
+        except Exception as e:
+            print(f"Send attempt {attempt + 1} failed: {str(e)}")
+            if attempt < max_retries - 1:
+                await asyncio.sleep(retry_delay)
+            else:
+                print("Max retries reached. Unable to send data.")
+                raise  # Re-raise the last exception if all retries fail
+
+
 # Helper function to create headers with API key
 def get_api_headers():
     return {"Authorization": f"Bearer {API_KEY}"}
@@ -224,9 +239,11 @@ async def websocket_endpoint(websocket: WebSocket):
 
         with open(model_data["object_2d"], "rb") as image_file:
             render_data = base64.b64encode(image_file.read()).decode("utf-8")
-            await websocket.send_text(json.dumps({"render": render_data}))
+            await send_with_retries(websocket, json.dumps({"render": render_data}))
 
-        await websocket.send_text(json.dumps({"object_path": model_data["object_3d"]}))
+        await send_with_retries(
+            websocket, json.dumps({"object_path": model_data["object_3d"]})
+        )
 
 
 @app.get("/download")

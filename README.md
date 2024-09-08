@@ -52,9 +52,9 @@ cd npair
 Use Docker Compose to build the images (if necessary) and start the application in your desired mode:
 
 ```bash
-docker-compose -f docker-compose-monitoring.yml up --build
+docker-compose -f docker-compose.dev.yml up --build
 or
-docker-compose -f docker-compose-tracking.yml up --build
+docker-compose -f docker-compose.prod.yml up --build
 
 ```
 
@@ -67,12 +67,15 @@ This will build the required images and bring up the concerned services. You can
 **4. Run Tests:**
 
 ```bash
-docker-compose run --rm tests pytest
+docker-compose -f docker-compose.prod.yml run --rm model_api pytest test_model_api.py
+docker-compose -f docker-compose.prod.yml run --rm model_api pytest --asyncio-mode=auto --log-cli-level=DEBUG unit_tests.py
+docker-compose -f docker-compose.dev.yml run --rm model_api pytest -s test_integration.py
+docker-compose -f docker-compose.prod.yml run --rm user_api pytest --asyncio-mode=auto --log-cli-level=DEBUG test_user_api.py
 ```
 
 **5. Production Deployment:**
 
-Refer to the `docker-compose-prod.yml` file for configuration details specific to a production environment.
+Refer to the `docker-compose.prod.yml` file for configuration details specific to a production environment.
 
 ### API Usage
 
