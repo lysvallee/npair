@@ -91,7 +91,7 @@ async def home(request: Request):
         response = await client.get(
             f"{DATA_API_URL}/categories", headers=get_api_headers()
         )
-        categories = await response.json()
+        categories = response.json()
     return templates.TemplateResponse(
         "home.html", {"request": request, "categories": categories}
     )
@@ -135,7 +135,7 @@ async def images(request: Request, category: str, page: int = 1):
             headers=get_api_headers(),
         )
         response.raise_for_status()
-        image_paths = await response.json()
+        image_paths = response.json()
         logger.debug(f"image paths: {image_paths}")
     return templates.TemplateResponse(
         "images.html",
@@ -156,7 +156,7 @@ async def load_more(category: str, page: int):
             f"{DATA_API_URL}/images/{category}?page={page}&page_size={page_size}",
             headers=get_api_headers(),
         )
-        image_paths = await response.json()
+        image_paths = response.json()
     return {"images": image_paths}
 
 
@@ -197,7 +197,7 @@ async def websocket_endpoint(websocket: WebSocket):
         if response.status_code != 200:
             await websocket.close(code=1000, reason="Failed to get latest usage")
             return
-        latest_usage = await response.json()
+        latest_usage = response.json()
         image_path = latest_usage.get("selected_image_path")
         logger.debug(f"3D image path: {image_path}")
         response = await client.post(
@@ -208,7 +208,7 @@ async def websocket_endpoint(websocket: WebSocket):
         if response.status_code != 200:
             await websocket.close(code=1000, reason="Failed to generate model")
             return
-        model_data = await response.json()
+        model_data = response.json()
         logger.debug(f"model data: {model_data}")
         response = await client.put(
             f"{DATA_API_URL}/usages/latest",
