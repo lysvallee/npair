@@ -111,7 +111,7 @@ def insert_images():
     for image_category in queries:
         # Create directory for each category
         os.makedirs(f"/data/storage/images/{image_category}", exist_ok=True)
-        for p in range(1, 3):
+        for p in range(1, 5):
             try:
                 # Construct API URL with query parameters
                 page_url = f"https://pixabay.com/api/?key={key}&category={pixabay_category}&q={image_category}&safesearch=true&page={p}&per_page=50&editors_choice={editors_choice}&colors={colors}&image_type=photo"
@@ -123,7 +123,20 @@ def insert_images():
                     for s, source in enumerate(sources):
                         # Filter images by checking tags
                         tags = source["tags"].replace(", ", "_")
-                        if image_category in tags:
+                        if image_category in tags or (
+                            image_category == "bicycle"
+                            and any(
+                                item in tags
+                                for item in [
+                                    "bike",
+                                    "cycle",
+                                    "scooter",
+                                    "vespa",
+                                    "harley",
+                                    "kawasaki",
+                                ]
+                            )
+                        ):  # Designed to include all types of "deux-roues"
                             logging.info(
                                 f"Category={image_category} - Page={p} - Image={s} - Tags={tags}"
                             )
