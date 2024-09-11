@@ -12,15 +12,15 @@ if __name__ == "__main__":
     insert_images()
 
     # Step 2: Extract movie palettes from Cassandra database and import
-    insert_movies()
+    # insert_movies()
 
     # Step 3: Extract show palettes from PostgreSQL database and import
-    insert_shows()
+    # insert_shows()
 
     # Step 4: Extract brand palettes from CSV file and import
-    insert_brands()
+    # insert_brands()
 
     # Step 5: Extract material properties from HTML file and import
-    insert_materials()
+    # insert_materials()
 
     print("Initial setup complete: Data aggregation and import finished.")
