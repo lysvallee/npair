@@ -113,7 +113,7 @@ async def choose_category(request: Request, selected_category: str = Form(...)):
 
 @app.get("/category/{category}")
 async def images(request: Request, category: str, page: int = 1):
-    page_size = 21  # Number of images per page
+    page_size = 9  # Number of images per page
     async with httpx.AsyncClient() as client:
         response = await client.get(
             f"{DATA_API_URL}/images/{category}?page={page}&page_size={page_size}",
@@ -135,7 +135,7 @@ async def images(request: Request, category: str, page: int = 1):
 
 @app.get("/category/load_more/{category}/{page}")
 async def load_more(category: str, page: int):
-    page_size = 21
+    page_size = 9
     async with httpx.AsyncClient() as client:
         response = await client.get(
             f"{DATA_API_URL}/images/{category}?page={page}&page_size={page_size}",

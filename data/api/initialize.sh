@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Uncomment to start afresh
-rm -rf /data/storage/images/*
+#rm -rf /data/storage/images/*
 
 # Check if the images folder is empty before initialising the data collection
 if [ -z "$(ls -A /data/storage/images )" ]; then

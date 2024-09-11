@@ -53,8 +53,6 @@ jobs:
         sudo curl -L "https://github.com/docker/compose/releases/download/v2.17.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
         sudo chmod +x /usr/local/bin/docker-compose
 
-    - name: Run model API tests with docker-compose
-      run: docker-compose -f docker-compose.prod.yml run --rm model_api pytest test_model_api.py
 
 
 

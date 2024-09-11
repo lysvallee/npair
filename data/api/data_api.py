@@ -93,7 +93,7 @@ def update_latest_usage(update_data: dict, db: Session = Depends(get_db)):
 
 @app.get("/images/{category}")
 def get_images_by_category(
-    category: str, page: int = 1, page_size: int = 21, db: Session = Depends(get_db)
+    category: str, page: int = 1, page_size: int = 9, db: Session = Depends(get_db)
 ):
     try:
         logger.debug(
