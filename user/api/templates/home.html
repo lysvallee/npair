@@ -19,7 +19,7 @@
     <div class="section" id="page-background">
       <div class="row" id="text-color">
         <div class="col s6 offset-s3" id="intro1">
-          <h4>Select an image and our AI will turn it into a 3D object.</h4>
+          <h4>Select an image you like and our AI will turn it into a 3D object.</h4>
         </div>    
         <div class="col s4 offset-s4" id="intro2">
           <h5>No modelling required... No prompting fuss...</h5>
@@ -31,7 +31,7 @@
             <img class="responsive-img" src="/static/images/low_poly_boy.png" alt="Render of a 3D model.">
           </div>
         </div>        
-        <div class="col s5 offset-s1">
+        <div class="col s4 offset-s2">
           <div class="input-field" id="text-color">
             <h4>Please choose a category:</h4>
             <form action="/selected_category" method="post">
@@ -39,7 +39,7 @@
               <p>
                 <label>
                   <input type="radio" class="with-gap" name="selected_category" value="{{ category }}">
-                  <span>{{ category }}</span>
+                  <span id="category-label">{{ category }}</span>
                 </label>
               </p>
               {% endfor %}
@@ -47,11 +47,8 @@
             </form>
           </div>       
         </div>      
-      </div>  
-        
-
+      </div>     
     </div>  
-
     <footer class="page-footer id="page-background">      
       <div class="row">
         <div class="col s2">
@@ -59,7 +56,7 @@
             <img class="responsive-img" src="/static/images/npair_logo.jpg" alt="Logo du NPAIR.">
           </div>
         </div>
-        <div class="col s9">
+        <div class="col s9 offset-s1">
           <span>
             <h4>AI for NPR: Artificial Intelligence meets your non-photorealistic needs</h4>                
           </span>
@@ -95,6 +92,9 @@
       margin-bottom: 160px;      
       overflow:hidden;
       }
+      #category-label {
+      font-size: 1.6rem
+      }
       .image-wrapper {
       /* Set desired dimensions for the wrapper */
       width: 150px;  
@@ -112,8 +112,7 @@
       /* Set background color using your ID selector */
       /*padding: 1rem; /* Add padding for content */
       }
-    </style>
-          
+    </style>          
     <!--JavaScript at end of body for optimized loading-->
     <script src="/static/jquery-3.7.1.min.js"></script>
     <script src="/static/materialize/materialize.js"></script>

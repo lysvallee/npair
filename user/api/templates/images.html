@@ -6,16 +6,6 @@
     <title>Images - {{ category }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">    
-    <style>
-        .image-card {
-            cursor: pointer;
-        }
-        .image-card img {
-            width: 100%;
-            height: 240px;
-            object-fit: contain;
-        }
-    </style>
 </head>
 <body>
     <nav id="npair-nav">
@@ -41,15 +31,68 @@
             </div>
         </div>
     </div>
-    <style>
+    <footer class="page-footer id="page-background">      
+        <div class="row">
+          <div class="col s2">
+            <div class="image-wrapper">
+              <img class="responsive-img" src="/static/images/npair_logo.jpg" alt="Logo du NPAIR.">
+            </div>
+          </div>
+          <div class="col s9 offset-s1">
+            <span>
+              <h4>AI for NPR: Artificial Intelligence meets your non-photorealistic needs</h4>                
+            </span>
+          </div>
+        </div>      
+      </footer>  
+      <style>
+        .image-card {
+            cursor: pointer;
+        }
+        .image-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+        }
+        html, body {
+          height: 100%;
+        }
+        #npair-nav {
+        background-color: #c8102e !important;
+        }
         #page-background {
-      background-color: #424242 !important;
-      }
-      #text-color {
-      color: #bdbdbd !important;
-      }
-    </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        margin-top: 5px;
+        background-color: #424242 !important;
+        }
+        #text-color {
+        color: #bdbdbd !important;
+        }
+        #image-grid {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        }
+        #load-more {
+        margin-bottom: 100px;
+        }
+        .image-wrapper {
+        /* Set desired dimensions for the wrapper */
+        width: 150px;  
+        max-height: 70px;
+        /* Optional: Center the image within the wrapper if needed */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .page-footer {
+        position: fixed;  /* Fix footer to bottom */
+        bottom: 0;
+        left: 0;
+        width: 100%; /* Span entire width */
+        background-color: #c8102e !important;
+        /*padding: 1rem; /* Add padding for content */
+        }
+      </style>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         let currentPage = {{ current_page }};
         const category = "{{ category }}";
