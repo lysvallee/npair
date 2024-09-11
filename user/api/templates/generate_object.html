@@ -17,9 +17,9 @@
       </div>
     </nav>
     <div class="section" id="page-background">
-      <div class="container">
-        <span id="text-color">
-          <h4>Source Image -------------------> AI Model ------------------> Generated 3D Object</h4>
+      <div class="container" id="intro">
+        <span>
+          <h4>Source Image ------------------------------> AI Model ----------------------------> Generated 3D Object</h4>
         </span>
         <div class="progress">
           <div class="indeterminate"></div>
@@ -33,7 +33,6 @@
         </div>
       </div>
     </div>
-    
     <div class="container" id="btn-row">
       <div class="row">
         <div class="col s3 offset-s0">
@@ -47,22 +46,21 @@
         </div>
       </div>  
     </div>
-
     <footer class="page-footer id="page-background">      
       <div class="row">
-        <div class="col s4">
+        <div class="col s2">
           <div class="image-wrapper">
             <img class="responsive-img" src="/static/images/npair_logo.jpg" alt="Logo du NPAIR.">
           </div>
         </div>
-        <div class="col s6">
-          <span id="text-color">
-            <h5>AI for NPR: Artificial Intelligence meets your non-photorealistic needs</h5>                
+        <div class="col s9 offset-s1">
+          <span>
+            <h4>AI for NPR: Artificial Intelligence meets your non-photorealistic needs</h4>                
           </span>
         </div>
       </div>      
-    </footer>
-    <style>
+    </footer>  
+  <style>
       html, body {
         height: 100%;
       }
@@ -73,24 +71,29 @@
         margin-top: 50px;  /* Adds 10px of space below each row */
       }
       #btn-row {
-      margin-top: 50px;  /* Adds 10px of space below each row */
-      margin-bottom: 50px;  /* Adds 10px of space below each row */        
+      margin-top: 70px;  /* Adds 10px of space below each row */
+      margin-bottom: 100px;  /* Adds 10px of space below each row */        
       }
       /* #buttons {
         color:#424242;
         background-color: #76b72a
       }
- */      #page-background {
-      background-color: #424242 !important;
-      }
-      #text-color {
+ */      
+      #page-background {
+        margin-top: 5px;
+        background-color: #424242 !important;
+        margin-bottom: 5px;
+        }
+      #intro {
       color: #bdbdbd !important;
+      margin-top: 70px;
       }
       #image-container {
       width: 480px;
       height: 480px; 
       border: 20px double #212121;
       overflow:hidden;
+      margin-top: 20px;
       }
       #render {
       width: 100%;
