@@ -9,50 +9,20 @@ from typing import List
 from fastapi.staticfiles import StaticFiles
 import time
 import logging
-from logging.handlers import TimedRotatingFileHandler
 import mimetypes
 from services import get_db
 from sqlmodel import Session
 from models import ServiceMetrics
 from datetime import datetime
 
-# Ensure the logs directory exists
-log_dir = "/app/logs"
-if not os.path.exists(log_dir):
-    try:
-        os.makedirs(log_dir, exist_ok=True)
-    except PermissionError:
-        print("Permission denied: Unable to create /app/logs directory")
-        log_dir = (
-            None  # Set log_dir to None or an alternative path if permission is denied
-        )
-
-# Configure logging only if log_dir is correctly set
-if log_dir:
-    log_file = os.path.join(log_dir, "user_api.log")
-
-    # Set up logging
-    logging.basicConfig(
-        level=logging.DEBUG,
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-        handlers=[
-            TimedRotatingFileHandler(
-                log_file, when="midnight", interval=1, backupCount=7
-            ),
-            logging.StreamHandler(),  # This will log to stdout (and therefore Docker logs)
-        ],
-    )
-else:
-    # Fallback: Log only to stdout if directory creation failed
-    logging.basicConfig(
-        level=logging.DEBUG,
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-        handlers=[logging.StreamHandler()],
-    )
-
-# Sample log message to test
+# Setup logging
+os.makedirs("/app/logs", exist_ok=True)
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    filename="/app/logs/user_api.log",
+)
 logger = logging.getLogger(__name__)
-logger.debug("Logging is configured and directory exists.")
 
 
 app = FastAPI()
