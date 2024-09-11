@@ -64,18 +64,6 @@ This will build the required images and bring up the concerned services. You can
 * Model API: http://localhost:8001
 * User API: http://localhost:8002
 
-**4. Run Tests:**
-
-```bash
-docker-compose -f docker-compose.prod.yml run --rm model_api pytest test_model_api.py
-docker-compose -f docker-compose.prod.yml run --rm model_api pytest --asyncio-mode=auto --log-cli-level=DEBUG unit_tests.py
-docker-compose -f docker-compose.dev.yml run --rm model_api pytest -s test_integration.py
-docker-compose -f docker-compose.prod.yml run --rm user_api pytest --asyncio-mode=auto --log-cli-level=DEBUG test_user_api.py
-```
-
-**5. Production Deployment:**
-
-Refer to the `docker-compose.prod.yml` file for configuration details specific to a production environment.
 
 ### API Usage
 
@@ -111,8 +99,8 @@ Full file structure:
 ├── data
 │   ├── api
 │   │   ├── clear_databases.py
-│   │   ├── data_aggregation.py
 │   │   ├── data_api.py
+│   │   ├── data_collection.md
 │   │   ├── Dockerfile
 │   │   ├── extract_brand_palettes.py
 │   │   ├── extract_images.py
@@ -133,15 +121,9 @@ Full file structure:
 │       ├── objects
 │       ├── palettes
 │       ├── renders
-│       └── tmp
-├── docker-compose-data-user.yml
-├── docker-compose-monitoring.yml
-├── docker-compose-poc.yml
-├── docker-compose-prod_add.yml
-├── docker-compose-prod.yml
-├── docker-compose-shows.yml
-├── docker-compose-test.yml
-├── docker-compose-tracking.yml
+│       └── test_data
+├── docker-compose.dev.yml
+├── docker-compose.prod.yml
 ├── grafana
 │   ├── data
 │   │   ├── csv
@@ -157,17 +139,22 @@ Full file structure:
 │   ├── data_api.log
 │   ├── extract_movie_palettes.log
 │   ├── model_api.log
-│   ├── user_api.log
+│   └── user_api.log
 ├── model
 │   ├── api
-│   │   ├── Dockerfile
+│   │   ├── Dockerfile.cpu
+│   │   ├── Dockerfile.gpu
+│   │   ├── logs
 │   │   ├── model_api.py
 │   │   ├── models.py
 │   │   ├── pip_cache
+│   │   ├── __pycache__
+│   │   ├── pytest.ini
 │   │   ├── requirements.txt
 │   │   ├── services.py
-│   │   ├── td.org
-│   │   └── triposr
+│   │   ├── test_model_api.py
+│   │   ├── triposr
+│   │   └── unit_tests.py
 │   ├── huggingface
 │   │   └── hub
 │   ├── tracking
@@ -177,12 +164,6 @@ Full file structure:
 │   └── u2net
 │       └── u2net.onnx
 ├── README.md
-├── tests
-│   ├── Dockerfile
-│   ├── requirements.txt
-│   ├── test_data_api.py
-│   ├── test_model.py
-│   └── test_user_api.py
 ├── tracking
 │   └── api
 │       └── pip_cache
@@ -192,9 +173,12 @@ Full file structure:
         ├── favicon.ico
         ├── models.py
         ├── pip_cache
+        ├── pytest.ini
         ├── requirements.txt
         ├── services.py
         ├── static
         ├── templates
+        ├── test_user_api_cl.py
+        ├── test_user_api.py
         └── user_api.py
 ```
