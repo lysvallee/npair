@@ -1,5 +1,5 @@
-from fastapi import FastAPI, HTTPException, Request
-from sqlmodel import SQLModel, Field
+from fastapi import FastAPI, HTTPException, Request, WebSocket, WebSocketDisconnect
+from sqlmodel import SQLModel, Field, Session
 import os
 import shutil
 import subprocess
@@ -7,8 +7,7 @@ import logging
 import time
 from glob import glob
 from services import get_db
-from sqlmodel import Session
-from models import ServiceMetrics
+from models import ServiceMetrics, ModelMetrics
 from datetime import datetime
 
 # Create logs directory if it doesn't exist
@@ -25,6 +24,35 @@ logger = logging.getLogger(__name__)
 app = FastAPI()
 
 API_KEY = os.getenv("API_KEY")
+
+
+def parse_model_output(output: str):
+    metrics = {}
+
+    # Regular expressions to match the time entries
+    patterns = {
+        "initialization_time_ms": r"Initializing model finished in (\d+\.\d+)ms",
+        "processing_time_ms": r"Processing images finished in (\d+\.\d+)ms",
+        "running_time_ms": r"Running model finished in (\d+\.\d+)ms",
+        "rendering_time_ms": r"Rendering finished in (\d+\.\d+)ms",
+        "mesh_extraction_time_ms": r"Extracting mesh finished in (\d+\.\d+)ms",
+        "mesh_export_time_ms": r"Exporting mesh finished in (\d+\.\d+)ms",
+    }
+
+    for metric, pattern in patterns.items():
+        match = re.search(pattern, output)
+        if match:
+            metrics[metric] = float(match.group(1))
+
+    # Calculate total time
+    metrics["total_time_ms"] = sum(metrics.values())
+
+    # Extract object name (assuming it's the filename without extension)
+    object_name_match = re.search(r"/objects/(\w+)", output)
+    if object_name_match:
+        metrics["object_name"] = object_name_match.group(1)
+
+    return metrics
 
 
 @app.middleware("http")

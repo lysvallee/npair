@@ -68,6 +68,16 @@ services:
       - "3000:3000"
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
-      - GF_LOG_LEVEL=error
+      - GF_LOG_LEVEL=critical
+      - GF_SMTP_ENABLED=false
+      - GF_ALERTING_ERROR_OR_TIMEOUT=keep_state
+      - GF_ALERTING_NODATA_OR_NULLVALUES=keep_state
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=
+      - GF_INSTALL_PLUGINS=
+      - GF_PANELS_DISABLE_SANITIZE_HTML=true
+      - GF_PLUGIN_XYCHART=false
+    logging:
+      driver: "none"
     depends_on:
       - db
+     
