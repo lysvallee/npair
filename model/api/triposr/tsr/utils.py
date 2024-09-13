@@ -468,15 +468,8 @@ def save_video(
     writer.close()
 
 
-def save_gif(frames: List[PIL.Image.Image], output_path: str, fps: int = 24):
-    # use imageio to save gif
-    frames = [np.array(frame) for frame in frames]
-    # Create GIF
-    imageio.mimsave(output_path, frames, fps=fps, loop=0)
-
-
 def save_gif(
-    frames: List[Union[Image.Image, np.ndarray]], output_path: str, fps: int = 24
+    frames: List[Union[Image.Image, np.ndarray]], output_path: str, fps: int = 4
 ) -> None:
     """
     Save a list of frames as an animated GIF.

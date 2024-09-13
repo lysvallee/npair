@@ -57,11 +57,6 @@ def parse_model_output(output: str):
     # Calculate total time
     metrics["total_time_ms"] = sum(metrics.values())
 
-    # Extract object name (assuming it's the filename without extension)
-    object_name_match = re.search(r"/objects/(\w+)", output)
-    if object_name_match:
-        metrics["object_name"] = object_name_match.group(1)
-
     return metrics
 
 
@@ -77,7 +72,9 @@ async def generate_3d_model(request: Request):
 
         if not os.path.exists(image_path):
             raise HTTPException(status_code=404, detail="Image not found")
-
+        # Retrieve hyperparameters
+        chunk_size = str(model_parameters.get("chunk_size", 8192))
+        mc_resolution = str(model_parameters.get("mc_resolution", 256))
         # Command to run the external process for model generation
         command = [
             "python3",
@@ -87,9 +84,9 @@ async def generate_3d_model(request: Request):
             "glb",
             "--render",
             "--chunk-size",
-            str(model_parameters.get("chunk_size", 4096)),
+            chunk_size,
             "--mc-resolution",
-            str(model_parameters.get("mc_resolution", 128)),
+            mc_resolution,
             "--output-dir",
             OBJECTS_DIR,
         ]
@@ -109,7 +106,7 @@ async def generate_3d_model(request: Request):
                 f"Subprocess output (combined stdout and stderr): {standard_output}"
             )
 
-            # Extract metrics from standard output (assuming you have a function for this)
+            # Extract metrics from standard output
             metrics = parse_model_output(standard_output)
             return {"metrics": metrics}
 
