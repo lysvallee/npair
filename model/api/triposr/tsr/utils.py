@@ -469,7 +469,7 @@ def save_video(
 
 
 def save_gif(
-    frames: List[Union[Image.Image, np.ndarray]], output_path: str, fps: int = 4
+    frames: List[Union[Image.Image, np.ndarray]], output_path: str, fps: int = 24
 ) -> None:
     """
     Save a list of frames as an animated GIF.
