@@ -1,0 +1,62 @@
+.git
+.gitignore
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env
+pip-log.txt
+pip-delete-this-directory.txt
+.tox
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.mypy_cache
+.pytest_cache
+.hypothesis
+
+# IDE-specific files
+.idea
+*.iml
+*.suo
+*.sln
+*.user
+*.jproj
+*.pbxproj
+
+# Other build artifacts
+dist
+build
+target
+lib
+*.jar
+*.war
+*.ear
+*.dll
+*.so
+*.dylib
+
+# Large binary files
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+*.dmg
+*.iso
+
+# Logs
+*.log
+*.err
+
+# Database files
+*.db
+*.sqlite3
+
+# Temporary files
+*~

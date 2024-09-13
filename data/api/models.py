@@ -71,3 +71,19 @@ class ServiceMetrics(SQLModel, table=True):
     response_time: float
     status_code: int
     timestamp: datetime = Field(default_factory=datetime.utcnow)
+
+
+class ModelMetrics(SQLModel, table=True):
+    __tablename__ = "model_metrics"
+    id: int = Field(default=None, primary_key=True)
+    object_name: str
+    initialization_time_ms: float
+    processing_time_ms: float
+    running_time_ms: float
+    rendering_time_ms: float
+    mesh_extraction_time_ms: float
+    mesh_export_time_ms: float
+    total_time_ms: float
+    chunk_size: int
+    mc_resolution: int
+    timestamp: datetime = Field(default_factory=datetime.utcnow)

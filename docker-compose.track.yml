@@ -1,0 +1,84 @@
+version: '3.9'
+services:
+  data_api:
+    build: ./data/api
+    ports:
+      - "8000:8000"
+    environment:
+      - NPAIR_DB_URL=postgresql://admin:3Dgen_gltf@db/npair_db
+      - API_KEY=9831243-d1ff87804d4b3508285497c61
+    volumes:
+      - ./data/storage:/data/storage
+      - ./data/api/pip_cache:/root/.cache/pip
+      - ./logs:/app/logs
+    depends_on:
+      - db
+
+  model_api_track:
+    build:
+      context: ./model/api
+      dockerfile: Dockerfile.gpu
+    image: npair_model_api_track:gpu
+    ports:
+      - "8001:8001"
+    environment:
+      - NPAIR_DB_URL=postgresql://admin:3Dgen_gltf@db/npair_db
+      - API_KEY=9831243-d1ff87804d4b3508285497c61
+    volumes:
+      - ./data/storage:/data/storage
+      - ./model/api/pip_cache:/root/.cache/pip
+      - ./logs:/app/logs
+      - ./model/huggingface:/root/.cache/huggingface
+      - ./model/u2net:/root/.u2net
+    depends_on:
+      - data_api
+    runtime: nvidia # Enables GPU access
+    command: uvicorn model_api_track:app --host 0.0.0.0 --port 8001
+
+  tracking_api:
+    build: ./model/tracking
+    ports:
+      - "5000:5000"
+    environment:
+      - NPAIR_DB_URL=postgresql://admin:3Dgen_gltf@db/npair_db
+      - API_KEY=9831243-d1ff87804d4b3508285497c61
+    volumes:
+      - ./data/storage:/data/storage
+      - ./model/tracking/pip_cache:/root/.cache/pip
+      - ./logs:/app/logs      
+    depends_on:
+      - model_api_track
+      - db
+
+  db:
+    image: postgres:14
+    volumes:
+      - ./data/storage/db:/var/lib/postgresql/data
+      - ./logs:/app/logs
+    environment:
+      POSTGRES_DB: npair_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 3Dgen_gltf
+
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - ./grafana/data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_LOG_LEVEL=critical
+      - GF_SMTP_ENABLED=false
+      - GF_ALERTING_ERROR_OR_TIMEOUT=keep_state
+      - GF_ALERTING_NODATA_OR_NULLVALUES=keep_state
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=
+      - GF_INSTALL_PLUGINS=
+      - GF_PANELS_DISABLE_SANITIZE_HTML=true
+      - GF_PLUGIN_XYCHART=false
+    logging:
+      driver: "none"
+    depends_on:
+      - db
+     

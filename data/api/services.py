@@ -1,6 +1,15 @@
 import os
 from sqlmodel import Session, create_engine, SQLModel
-from models import Image, Movie, Show, Brand, Material, Usage
+from models import (
+    Image,
+    Movie,
+    Show,
+    Brand,
+    Material,
+    Usage,
+    ServiceMetrics,
+    ModelMetrics,
+)
 
 # Database URL
 NPAIR_DB_URL = os.environ.get("NPAIR_DB_URL")

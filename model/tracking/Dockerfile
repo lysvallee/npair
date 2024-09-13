@@ -13,4 +13,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD ["uvicorn", "user_api:app", "--host", "0.0.0.0", "--port", "5000"]
+CMD ["uvicorn", "tracking_api:app", "--host", "0.0.0.0", "--port", "5000"]

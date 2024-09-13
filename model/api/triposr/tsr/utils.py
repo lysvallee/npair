@@ -3,7 +3,7 @@ import math
 from collections import defaultdict
 from dataclasses import dataclass
 from typing import Any, Callable, Dict, List, Optional, Tuple, Union
-
+import warnings
 import imageio
 import numpy as np
 import PIL.Image
@@ -474,9 +474,67 @@ def save_gif(frames: List[PIL.Image.Image], output_path: str, fps: int = 24):
     # Create GIF
     imageio.mimsave(output_path, frames, fps=fps, loop=0)
 
-    
+
+def save_gif(
+    frames: List[Union[Image.Image, np.ndarray]], output_path: str, fps: int = 24
+) -> None:
+    """
+    Save a list of frames as an animated GIF.
+
+    This function performs input validation, converts frames to numpy arrays if necessary,
+    and saves the result as an animated GIF using imageio.
+
+    Args:
+        frames (List[Union[PIL.Image.Image, np.ndarray]]): List of frames to be saved as GIF.
+        output_path (str): Path where the output GIF will be saved.
+        fps (int, optional): Frames per second for the GIF. Defaults to 24.
+
+    Raises:
+        ValueError: If fps is not within the valid range (1-30).
+        TypeError: If frames are not of the expected type.
+        RuntimeError: If an error occurs during GIF creation.
+
+    Returns:
+        None
+    """
+    # Validate fps
+    if not isinstance(fps, int):
+        raise TypeError(f"fps must be an integer, got {type(fps).__name__}")
+    if fps < 1 or fps > 30:
+        raise ValueError(f"fps must be between 1 and 30, got {fps}")
+
+    # Validate and prepare frames
+    try:
+        processed_frames = []
+        for frame in frames:
+            if isinstance(frame, Image.Image):
+                processed_frames.append(np.array(frame))
+            elif isinstance(frame, np.ndarray):
+                processed_frames.append(frame)
+            else:
+                raise TypeError(
+                    f"Unsupported frame type: {type(frame).__name__}. Expected PIL.Image.Image or numpy.ndarray."
+                )
+    except Exception as e:
+        raise RuntimeError(f"Error processing frames: {str(e)}")
+
+    # Create GIF
+    try:
+        imageio.mimsave(output_path, processed_frames, fps=fps, loop=0)
+    except Exception as e:
+        raise RuntimeError(f"Error creating GIF: {str(e)}")
+
+    # Warn if fps is high, as it might affect performance
+    if fps > 24:
+        warnings.warn(
+            f"High fps ({fps}) might affect performance or increase file size.",
+            UserWarning,
+        )
+
+    print(f"GIF successfully saved to {output_path}")
+
 
 def to_gradio_3d_orientation(mesh):
-    mesh.apply_transform(trimesh.transformations.rotation_matrix(-np.pi/2, [1, 0, 0]))
-    mesh.apply_transform(trimesh.transformations.rotation_matrix(np.pi/2, [0, 1, 0]))
+    mesh.apply_transform(trimesh.transformations.rotation_matrix(-np.pi / 2, [1, 0, 0]))
+    mesh.apply_transform(trimesh.transformations.rotation_matrix(np.pi / 2, [0, 1, 0]))
     return mesh
