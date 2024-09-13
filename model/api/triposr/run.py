@@ -159,7 +159,7 @@ for i, image in enumerate(images):
 
     if args.render:
         timer.start("Rendering")
-        n_views = 10
+        n_views = 8
         # Validate n_views
         if not isinstance(n_views, int):
             raise TypeError(f"n_views must be an integer, got {type(n_views).__name__}")

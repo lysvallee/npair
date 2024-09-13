@@ -55,7 +55,8 @@ Use Docker Compose to build the images (if necessary) and start the application 
 docker-compose -f docker-compose.dev.yml up --build
 or
 docker-compose -f docker-compose.prod.yml up --build
-
+or
+docker-compose -f docker-compose.track.yml up --build
 ```
 
 This will build the required images and bring up the concerned services. You can access the APIs at the following default ports:
@@ -91,6 +92,15 @@ Please refer to `user/api/user_api.py` for specific endpoint details and usage i
 ### Monitoring
 
 The user API is integrated with Grafana for monitoring. Please refer to the `user/monitoring` folder for configuration details.
+
+### Model Tracking
+
+To run experiments, set the hyperparameters with tracking_api.py, use docker-compose.track.yml, then start the process with:
+```bash
+curl -X POST http://localhost:5000/run_experiments
+```
+Logs are stored in logs/model_api_track.log.
+The resulting metrics are also available in the model_metrics table of the database.
 
 
 Full file structure:
