@@ -68,8 +68,8 @@ RENDERS_DIR = "/data/storage/renders"
 
 @app.post("/generate")
 async def generate_3d_model(model_parameters: dict):
-    chunk_size = "8192"
-    mc_resolution = "256"
+    chunk_size = "14336"  # defaul: 8192
+    mc_resolution = "256"  # default: 256
     if "image_path" not in model_parameters:
         raise HTTPException(status_code=422, detail="image_path is required")
     image_path = model_parameters["image_path"]
@@ -130,7 +130,7 @@ async def generate_3d_model(model_parameters: dict):
     shutil.move(generated_object, object_3d_path)
     shutil.move(render_gif, object_2d_path)
     png_files = glob(os.path.join(OBJECTS_DIR, "*.png"))
-    # for png_file in png_files:
-    #     os.remove(png_file)
+    for png_file in png_files:
+        os.remove(png_file)
     model_data = {"object_3d": object_3d_path, "object_2d": object_2d_path}
     return model_data

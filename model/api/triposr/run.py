@@ -159,7 +159,7 @@ for i, image in enumerate(images):
 
     if args.render:
         timer.start("Rendering")
-        n_views = 8
+        n_views = 24
         # Validate n_views
         if not isinstance(n_views, int):
             raise TypeError(f"n_views must be an integer, got {type(n_views).__name__}")
@@ -169,7 +169,7 @@ for i, image in enumerate(images):
         render_images = model.render(scene_codes, n_views=n_views, return_type="pil")
         for ri, render_image in enumerate(render_images[0]):
             render_image.save(os.path.join(output_dir, f"render_{ri:03d}.png"))
-        save_gif(render_images[0], os.path.join(output_dir, f"render.gif"), fps=10)
+        save_gif(render_images[0], os.path.join(output_dir, f"render.gif"), fps=24)
         timer.end("Rendering")
 
     timer.start("Extracting mesh")

@@ -60,9 +60,13 @@ async def run_experiment(image_name: str, chunk_size: int, mc_resolution: int):
 
 @app.post("/run_experiments")
 async def run_experiments(db: Session = Depends(get_db)):
+    """
+    Sets experiment parameters. To be run with:
+    curl -X POST http://localhost:5000/run_experiments
+    """
     categories = ["bicycle", "car", "plane"]
-    chunk_sizes = [8192, 10240, 12288]
-    mc_resolutions = [64, 128, 256]
+    chunk_sizes = [8192, 12288, 14336]
+    mc_resolutions = [16, 128, 256]
 
     try:
         for category in categories:
@@ -87,7 +91,9 @@ async def run_experiments(db: Session = Depends(get_db)):
                                 detail=f"Failed to generate model for {image.image_name}",
                             )
                         else:
-                            object_name = f"{os.path.basename(os.path.splitext(image.image_name)[0])}_{chunk_size}_{mc_resolution}"
+                            object_name = os.path.basename(
+                                os.path.splitext(image.image_name)[0]
+                            )
                             log_model_metrics(
                                 db=db,
                                 object_name=object_name,
@@ -106,8 +112,12 @@ async def run_experiments(db: Session = Depends(get_db)):
                             # Define the output gif path
                             render_gif = os.path.join(OBJECTS_DIR, "render.gif")
                             # Generate unique names for the output files
-                            object_3d_name = f"{object_name}.glb"
-                            object_2d_name = f"{object_name}.gif"
+                            object_3d_name = (
+                                f"{object_name}_{chunk_size}_{mc_resolution}.glb"
+                            )
+                            object_2d_name = (
+                                f"{object_name}_{chunk_size}_{mc_resolution}.gif"
+                            )
                             object_3d_path = os.path.join(OBJECTS_DIR, object_3d_name)
                             object_2d_path = os.path.join(RENDERS_DIR, object_2d_name)
                             logger.debug(
