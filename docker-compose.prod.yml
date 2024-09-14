@@ -47,6 +47,7 @@ services:
     depends_on:
       - data_api
       - model_api
+      - db
 
   db:
     image: postgres:14
