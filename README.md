@@ -134,6 +134,7 @@ Full file structure:
 │       └── test_data
 ├── docker-compose.dev.yml
 ├── docker-compose.prod.yml
+├── docker-compose.track.yml
 ├── grafana
 │   ├── data
 │   │   ├── csv
@@ -141,7 +142,12 @@ Full file structure:
 │   │   ├── pdf
 │   │   ├── plugins
 │   │   └── png
+│   ├── monitoring.md
 │   └── provisioning
+│       ├── alerting
+│       ├── dashboards
+│       ├── datasources
+│       └── plugins
 ├── logs
 │   ├── clear_databases.log
 │   ├── create_movies_db.log
@@ -149,6 +155,8 @@ Full file structure:
 │   ├── data_api.log
 │   ├── extract_movie_palettes.log
 │   ├── model_api.log
+│   ├── model_api_track.log
+│   ├── tracking_api.log
 │   └── user_api.log
 ├── model
 │   ├── api
@@ -156,39 +164,45 @@ Full file structure:
 │   │   ├── Dockerfile.gpu
 │   │   ├── logs
 │   │   ├── model_api.py
+│   │   ├── model_api_track.py
+│   │   ├── model_configuration.md
+│   │   ├── model_integration.md
 │   │   ├── models.py
 │   │   ├── pip_cache
 │   │   ├── __pycache__
 │   │   ├── pytest.ini
 │   │   ├── requirements.txt
 │   │   ├── services.py
+│   │   ├── test_model_api.md
 │   │   ├── test_model_api.py
 │   │   ├── triposr
+│   │   ├── unit_tests.md
 │   │   └── unit_tests.py
 │   ├── huggingface
 │   │   └── hub
 │   ├── tracking
 │   │   ├── Dockerfile
+│   │   ├── model_metrics1.csv
+│   │   ├── model_metrics2.csv
+│   │   ├── models.py
 │   │   ├── pip_cache
-│   │   └── requirements.txt
+│   │   ├── requirements.txt
+│   │   ├── services.py
+│   │   └── tracking_api.py
 │   └── u2net
 │       └── u2net.onnx
 ├── README.md
-├── tracking
-│   └── api
-│       └── pip_cache
 └── user
     └── api
         ├── Dockerfile
         ├── favicon.ico
         ├── models.py
         ├── pip_cache
-        ├── pytest.ini
         ├── requirements.txt
         ├── services.py
         ├── static
         ├── templates
-        ├── test_user_api_cl.py
+        ├── test_user_api.md
         ├── test_user_api.py
         └── user_api.py
 ```
