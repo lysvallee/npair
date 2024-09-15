@@ -1,4 +1,4 @@
-name: Build, Test, and Push Docker Image to GHCR
+name: Build, Test, and Push Application Docker Image to GHCR
 
 on:
   push:
@@ -42,8 +42,3 @@ jobs:
 
     - name: Wait for database and run tests
       run: docker-compose -f docker-compose.prod.yml run --rm user_api pytest --asyncio-mode=auto --log-cli-level=DEBUG test_user_api.py
-
-
-
-
-
