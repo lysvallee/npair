@@ -39,8 +39,3 @@ jobs:
 
     - name: Run model API tests with docker-compose
       run: docker-compose -f docker-compose.prod.yml run --rm model_api pytest test_model_api.py
-
-
-
-
-
