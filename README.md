@@ -25,7 +25,7 @@ The application consists of three main components:
 2. **Model API (model_api):** Runs the TripoSR model to generate 3D objects from images received through the API.
 3. **User API (user_api):** Receives user input, interacts with the data and model APIs, and provides the generated 3D object to the frontend.
 
-The application can be deployed in production and testing environments using Docker Compose. Monitoring for the user API is also integrated with Grafana.
+It can be deployed in production and testing environments using Docker Compose. Monitoring for the user API is also integrated with Grafana.
 
 ## Setting Up the Project
 
