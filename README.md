@@ -1,18 +1,33 @@
-## 3D Generation App with TripoSR Model
+# Ethical 3D Content Generation 🌟
 
-This project provides a web application for generating 3D objects from input images using the TripoSR model ([https://github.com/VAST-AI-Research/TripoSR](https://github.com/VAST-AI-Research/TripoSR)). It leverages FastAPI for building APIs and Docker for containerization.
+## Overview
+A proof-of-concept web application demonstrating responsible AI-powered 3D object generation, built with a commitment to copyright respect and ethical AI practices.
 
-### Project Overview
+## Key Features
+- 🤖 Utilizes TripoSR model for 3D object generation
+- 🖼️ Powered by Pixabay's royalty-free image database
+- 🛡️ 100% legal AI workflow
+- 🚀 Built with FastAPI and Docker for robust deployment
+
+## The Ethical AI Approach
+This project showcases how AI can generate 3D content while maintaining strict adherence to copyright principles:
+- Model trained on CC-BY licensed Objaverse dataset
+- Input images sourced from Pixabay's comprehensive royalty-free library
+
+## Tech Stack
+- FastAPI
+- Docker
+- TripoSR Model
+- Pixabay API
 
 The application consists of three main components:
-
 1. **Data API (data_api):** Serves images and tabular data (color palettes, PBR materials) from Apache Cassandra and PostgreSQL databases.
 2. **Model API (model_api):** Runs the TripoSR model to generate 3D objects from images received through the API.
 3. **User API (user_api):** Receives user input, interacts with the data and model APIs, and provides the generated 3D object to the frontend.
 
 The application can be deployed in production and testing environments using Docker Compose. Monitoring for the user API is also integrated with Grafana.
 
-### Setting Up the Project
+## Setting Up the Project
 
 **Prerequisites:**
 
@@ -66,7 +81,7 @@ This will build the required images and bring up the concerned services. You can
 * User API: http://localhost:8002
 
 
-### API Usage
+## API Usage
 
 **1. Data API:**
 
@@ -89,11 +104,11 @@ Please refer to `user/api/user_api.py` for specific endpoint details and usage i
 
 **Note:** This is a general overview. Specific API endpoints, request/response formats, and authentication mechanisms might require further exploration within the relevant API code files.
 
-### Monitoring
+## Monitoring
 
 The user API is integrated with Grafana for monitoring. Please refer to the `user/monitoring` folder for configuration details.
 
-### Model Tracking
+## Model Tracking
 
 To run experiments, set the hyperparameters with tracking_api.py, use docker-compose.track.yml, then start the process with:
 ```bash
@@ -206,3 +221,7 @@ Full file structure:
         ├── test_user_api.py
         └── user_api.py
 ```
+
+## Attributions
+- TripoSR Model: [VAST-AI-Research/TripoSR](https://github.com/VAST-AI-Research/TripoSR)
+- Image Source: [Pixabay API](https://pixabay.com/service/about/api/)
